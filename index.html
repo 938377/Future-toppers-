@@ -3,145 +3,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Class 9 Maths - Future Toppers</title>
+  <title>Class 9 Maths</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
   <style>
     * {
       margin: 0;
       padding: 0;
+      font-family: 'Poppins', sans-serif;
       box-sizing: border-box;
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #0a0a23;
-      color: #fff;
+      background: #0f0f23;
+      color: white;
       overflow-x: hidden;
     }
 
     header {
-      background: #015fcc;
-      display: flex;
-      align-items: center;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
-
-    header img {
-      width: 40px;
-      height: 40px;
-      margin-right: 12px;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 20px #00f7ff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     header h1 {
-      font-size: 1.5rem;
-      color: #fff;
+      font-size: 30px;
+      color: white;
+      text-shadow: 0 0 10px #00f7ff;
     }
 
     .container {
-      padding: 2rem;
-      position: relative;
-      z-index: 2;
+      padding: 20px;
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 16px;
-      padding: 2rem;
-      margin: 2rem 0;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 0 30px rgba(0, 194, 255, 0.2);
-      transition: transform 0.3s ease;
+    .chapter-card {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 15px #00f7ff80;
+      transition: 0.3s ease;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    .chapter-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px #00f7ff;
     }
 
-    .card h2 {
-      font-size: 2rem;
-      color: #00c2ff;
-      text-shadow: 0 0 10px #00c2ff;
-      margin-bottom: 1rem;
+    .chapter-title {
+      font-size: 26px;
+      color: #00f7ff;
+      margin-bottom: 20px;
+      text-align: center;
     }
 
-    .button {
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
-      margin: 0.5rem 0;
-      font-size: 1rem;
-      font-weight: bold;
-      color: #fff;
-      background: linear-gradient(135deg, #00c2ff, #476eff);
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 10px 20px;
       border: none;
       border-radius: 30px;
-      box-shadow: 0 0 15px rgba(0, 194, 255, 0.6);
+      font-size: 16px;
+      color: white;
       cursor: pointer;
+      background: linear-gradient(45deg, #00c6ff, #0072ff);
+      box-shadow: 0 0 15px #00f7ff80;
       text-decoration: none;
-      transition: background 0.3s ease, transform 0.3s ease;
+      transition: 0.3s ease;
     }
 
-    .button:hover {
-      background: linear-gradient(135deg, #476eff, #00c2ff);
+    .btn:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 25px #00f7ff;
     }
 
     #particles-js {
       position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
-      z-index: 0;
+      z-index: -1;
+      top: 0;
+      left: 0;
     }
   </style>
 </head>
 <body>
+  <div id="particles-js"></div>
 
-<div id="particles-js"></div>
+  <header>
+    <h1>📘 Class 9 Maths</h1>
+  </header>
 
-<header>
-  <img src="https://cdn-icons-png.flaticon.com/512/167/167707.png" alt="Logo">
-  <h1>Class 9 Maths</h1>
-</header>
-
-<div class="container">
-  <div class="card">
-    <h2>Number System</h2>
-    <a class="button" href="https://your-video-link.com">📺 Watch Video</a><br>
-    <a class="button" href="https://your-notes-link.com">📘 Access Notes</a>
+  <div class="container">
+    <div class="chapter-card">
+      <div class="chapter-title">Number System</div>
+      <div class="buttons">
+        <a href="https://your-video-link.com" class="btn">🎥 Watch Video</a>
+        <a href="https://your-notes-link.com" class="btn">📘 Access Notes</a>
+      </div>
+    </div>
+    <!-- Add more chapter cards below if needed -->
   </div>
-</div>
 
-<script>
-  tsParticles.load("particles-js", {
-    background: { color: "#0a0a23" },
-    fpsLimit: 60,
-    interactivity: {
-      events: {
-        onClick: { enable: true, mode: "push" },
-        onHover: { enable: true, mode: "grab" },
-        resize: true
+  <!-- Particle.js Script -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 40 },
+        "color": { "value": "#00f7ff" },
+        "shape": { "type": "circle" },
+        "opacity": {
+          "value": 0.3,
+          "random": true
+        },
+        "size": {
+          "value": 4,
+          "random": true
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00f7ff",
+          "opacity": 0.2,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2
+        }
       },
-      modes: {
-        push: { quantity: 4 },
-        grab: { distance: 200, links: { opacity: 0.5 } }
-      }
-    },
-    particles: {
-      color: { value: "#00c2ff" },
-      links: { enable: true, color: "#00c2ff", distance: 150, opacity: 0.4 },
-      move: { enable: true, speed: 1 },
-      number: { value: 60 },
-      opacity: { value: 0.5 },
-      shape: { type: "circle" },
-      size: { value: 3 }
-    },
-    detectRetina: true
-  });
-</script>
-
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
