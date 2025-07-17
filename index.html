@@ -286,7 +286,11 @@
       renderCards();
     }
 
-    fetchData();
+    async function init() {
+  await fetchData();
+  renderCards();
+}
+init();
   </script>
 </body>
         </html>
