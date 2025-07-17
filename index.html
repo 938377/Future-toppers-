@@ -6,16 +6,27 @@
   <title>Class 9 Maths</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
   <style>
-    a {
-  color: #00f0ff; /* Bright cyan for links */
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+   .link-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
-a:hover {
-  color: #ff00ff; /* Pinkish glow on hover */
-  text-shadow: 0 0 10px #ff00ff;
+.link-buttons a {
+  background: linear-gradient(145deg, #ff00cc, #3333ff);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 12px #ff00cc;
+  transition: all 0.3s ease;
+}
+
+.link-buttons a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00f0ff, 0 0 40px #ff00ff;
 }
     * {
       margin: 0;
