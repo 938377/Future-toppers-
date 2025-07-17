@@ -1,4 +1,3 @@
-<!-- Paste this full updated HTML in your index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,85 +6,6 @@
   <title>Future Toppers</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    #liveSection {
-  max-width: 1100px;
-  margin: 1rem auto 2rem;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-#liveSection h2 {
-  font-size: 1.6rem;
-  color: #ff4a4a;
-  text-shadow: 0 0 8px #ff4a4a88;
-  margin-bottom: 1.5rem;
-}
-
-.live-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-.live-card {
-  background: rgba(255, 74, 74, 0.12);
-  border-left: 4px solid #ff4a4a;
-  border-radius: 18px;
-  padding: 1.5rem;
-  color: white;
-  box-shadow: 0 0 12px #ff4a4a55;
-  transition: transform 0.3s ease;
-  backdrop-filter: blur(12px);
-}
-
-.live-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 22px #ff4a4acc;
-}
-
-.live-card span {
-  font-size: 2.2rem;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-
-.live-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.live-card p {
-  font-size: 0.95rem;
-  color: #ddd;
-}
-  #noticeSection {
-  max-width: 800px;
-  margin: 1rem auto 2rem;
-  background: rgba(0, 240, 255, 0.1);
-  padding: 1.5rem 2rem;
-  border-left: 4px solid #00f0ff;
-  border-radius: 16px;
-  box-shadow: 0 0 12px #00f0ff44;
-  backdrop-filter: blur(10px);
-  color: white;
-}
-
-#noticeSection h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #00f0ff;
-  text-shadow: 0 0 8px #00f0ff88;
-}
-
-#noticeSection ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#noticeSection li {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -159,6 +79,149 @@
       margin-bottom: 0.5rem;
     }
 
+    #noticeSection {
+      max-width: 800px;
+      margin: 1rem auto 2rem;
+      background: rgba(0, 240, 255, 0.1);
+      padding: 1.5rem 2rem;
+      border-left: 4px solid #00f0ff;
+      border-radius: 16px;
+      box-shadow: 0 0 12px #00f0ff44;
+      backdrop-filter: blur(10px);
+      color: white;
+    }
+
+    #noticeSection h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #00f0ff;
+      text-shadow: 0 0 8px #00f0ff88;
+    }
+
+    #noticeSection ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    #noticeSection li {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #liveSection {
+      max-width: 1100px;
+      margin: 1rem auto 2rem;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    #liveSection h2 {
+      font-size: 1.6rem;
+      color: #ff4a4a;
+      text-shadow: 0 0 8px #ff4a4a88;
+      margin-bottom: 1.5rem;
+    }
+
+    .live-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .live-card {
+      background: rgba(255, 74, 74, 0.12);
+      border-left: 4px solid #ff4a4a;
+      border-radius: 18px;
+      padding: 1.5rem;
+      color: white;
+      box-shadow: 0 0 12px #ff4a4a55;
+      transition: transform 0.3s ease;
+      backdrop-filter: blur(12px);
+    }
+
+    .live-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 22px #ff4a4acc;
+    }
+
+    .live-card span {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .live-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .live-card p {
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+
+    #videoPlayerSection {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem 1rem;
+      text-align: center;
+      background: rgba(0, 240, 255, 0.06);
+      border-radius: 20px;
+      box-shadow: 0 0 18px #00f0ff33;
+      backdrop-filter: blur(12px);
+      color: white;
+    }
+
+    #videoPlayerSection h2 {
+      font-size: 1.5rem;
+      color: #00f0ff;
+      text-shadow: 0 0 6px #00f0ff77;
+      margin-bottom: 1.5rem;
+    }
+
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    video {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 0 15px #00f0ff22;
+      outline: none;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+    }
+
+    .controls button,
+    .controls select {
+      background: rgba(0, 240, 255, 0.15);
+      border: 1px solid #00f0ff55;
+      border-radius: 10px;
+      padding: 0.5rem 1rem;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00f0ff33;
+      transition: all 0.3s ease;
+    }
+
+    .controls button:hover,
+    .controls select:hover {
+      background: #00f0ff22;
+      box-shadow: 0 0 16px #00f0ffaa;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -169,38 +232,37 @@
 </head>
 <body>
 
-  <!-- Glowing background -->
   <canvas id="bg"></canvas>
 
   <header>
     <h1>📚 Future Toppers</h1>
     <input type="text" id="searchInput" placeholder="Search subject...">
-<section id="noticeSection">
-  <h2>📢 Notice</h2>
-  <ul>
-    <li><strong>Today's Lecture:</strong></li>
-    <li>🧪 Science – 5 PM</li>
-    <li>🌍 SST – 8 PM</li>
-  </ul>
-</section>
-
-<section id="liveSection">
-  <h2>🔴 Live Classes</h2>
-  <div class="live-grid">
-    <div class="live-card">
-      <span>🧪</span>
-      <h3>Science - 5 PM</h3>
-      <p>Join the live class on time!</p>
-    </div>
-    <div class="live-card">
-      <span>🌍</span>
-      <h3>SST - 8 PM</h3>
-      <p>Live session tonight. Be ready!</p>
-    </div>
-  </div>
-</section>
-
   </header>
+
+  <section id="noticeSection">
+    <h2>📢 Notice</h2>
+    <ul>
+      <li><strong>Today's Lecture:</strong></li>
+      <li>🧪 Science – 5 PM</li>
+      <li>🌍 SST – 8 PM</li>
+    </ul>
+  </section>
+
+  <section id="liveSection">
+    <h2>🔴 Live Classes</h2>
+    <div class="live-grid">
+      <div class="live-card">
+        <span>🧪</span>
+        <h3>Science - 5 PM</h3>
+        <p>Join the live class on time!</p>
+      </div>
+      <div class="live-card">
+        <span>🌍</span>
+        <h3>SST - 8 PM</h3>
+        <p>Live session tonight. Be ready!</p>
+      </div>
+    </div>
+  </section>
 
   <div class="grid" id="subjectGrid">
     <a class="card" href="https://futuretoppersmaths.netlify.app/"><span>➗</span>Maths</a>
@@ -212,6 +274,26 @@
     <a class="card" href="https://futuretoppersitai89.netlify.app/"><span>💻</span>AI / IT</a>
     <a class="card" href="https://futuretoppersdppvault.netlify.app/"><span>🔐</span>DPP Vault</a>
   </div>
+
+  <section id="videoPlayerSection">
+    <h2>🎥 Lecture Playback</h2>
+    <div class="video-container">
+      <video id="video" src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
+      <div class="controls">
+        <button onclick="video.play()">▶️</button>
+        <button onclick="video.pause()">⏸️</button>
+        <label>Speed:
+          <select onchange="video.playbackRate = this.value">
+            <option value="0.5">0.5x</option>
+            <option value="1" selected>1x</option>
+            <option value="1.5">1.5x</option>
+            <option value="2">2x</option>
+          </select>
+        </label>
+        <button onclick="toggleFullScreen()">🔲 Fullscreen</button>
+      </div>
+    </div>
+  </section>
 
   <footer>
     Made with 💙 by Future Toppers
@@ -227,10 +309,15 @@
         card.style.display = text.includes(val) ? 'block' : 'none';
       });
     });
-  </script>
 
-  <!-- Particle background animation -->
-  <script>
+    const video = document.getElementById("video");
+    function toggleFullScreen() {
+      if (video.requestFullscreen) video.requestFullscreen();
+      else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+      else if (video.msRequestFullscreen) video.msRequestFullscreen();
+    }
+
+    // Particle animation
     const canvas = document.getElementById("bg");
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
@@ -263,7 +350,6 @@
     }
 
     animate();
-
     window.addEventListener('resize', () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
