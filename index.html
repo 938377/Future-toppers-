@@ -1,315 +1,292 @@
-<!-- Paste this full updated HTML in your index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Future Toppers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Live Classes - Future Toppers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    a.live-card {
-  text-decoration: none;
-  color: inherit;
-    }
-    #liveSection {
-  max-width: 1100px;
-  margin: 1rem auto 2rem;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-#liveSection h2 {
-  font-size: 1.6rem;
-  color: #ff4a4a;
-  text-shadow: 0 0 8px #ff4a4a88;
-  margin-bottom: 1.5rem;
-}
-
-.live-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-.live-card {
-  background: rgba(255, 74, 74, 0.12);
-  border-left: 4px solid #ff4a4a;
-  border-radius: 18px;
-  padding: 1.5rem;
-  color: white;
-  box-shadow: 0 0 12px #ff4a4a55;
-  transition: transform 0.3s ease;
-  backdrop-filter: blur(12px);
-}
-
-.live-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 22px #ff4a4acc;
-}
-
-.live-card span {
-  font-size: 2.2rem;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-
-.live-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.live-card p {
-  font-size: 0.95rem;
-  color: #ddd;
-}
-  #noticeSection {
-  max-width: 800px;
-  margin: 1rem auto 2rem;
-  background: rgba(0, 240, 255, 0.1);
-  padding: 1.5rem 2rem;
-  border-left: 4px solid #00f0ff;
-  border-radius: 16px;
-  box-shadow: 0 0 12px #00f0ff44;
-  backdrop-filter: blur(10px);
-  color: white;
-}
-
-#noticeSection h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #00f0ff;
-  text-shadow: 0 0 8px #00f0ff88;
-}
-
-#noticeSection ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#noticeSection li {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #0f0f1a;
+      background: radial-gradient(ellipse at top left, #0a0a0a, #000);
+      color: #e0e0e0;
       overflow-x: hidden;
-      color: white;
     }
 
-    canvas#bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      z-index: -1;
-    }
-
-    header {
+    .live-classes-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 16px;
       text-align: center;
-      padding: 2rem 1rem 1rem;
     }
 
-    header h1 {
-      font-size: 2.2rem;
+    h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #ffffff;
+      text-shadow: 0 0 12px #00f0ff;
+    }
+
+    .tabs-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .tab-button {
+      background: #121212;
+      border: 1px solid #00f0ff;
+      border-radius: 10px;
       color: #00f0ff;
-      text-shadow: 0 0 15px #00f0ff55;
-    }
-
-    #searchInput {
-      margin-top: 1rem;
-      padding: 0.6rem 1rem;
-      font-size: 1rem;
-      border-radius: 12px;
-      border: none;
-      background: rgba(255,255,255,0.1);
-      color: white;
-      outline: none;
-      box-shadow: 0 0 12px #00f0ff33;
-    }
-
-    .grid {
-      max-width: 1100px;
-      margin: 2rem auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      padding: 0 1rem 2rem;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 20px;
-      padding: 2rem;
-      text-align: center;
-      backdrop-filter: blur(14px);
-      color: white;
+      padding: 10px 24px;
       font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 0 15px rgba(0,255,255,0.1);
-      transition: all 0.4s ease;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
     }
 
-    .card:hover {
+    .tab-button:hover {
+      background: #0e0e0e;
       transform: scale(1.05);
-      box-shadow: 0 0 25px #00f0ffcc;
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
     }
 
-    .card span {
+    .tab-button.active {
+      background: #00f0ff;
+      color: #000;
+      box-shadow: 0 0 18px #00f0ff;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .card-link {
+      width: 280px;
+      text-decoration: none;
       display: block;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      color: inherit;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #aaa;
+    .live-card {
+      background: #161616;
+      border: 1px solid #2b2b2b;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.08);
+    }
+
+    .live-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 16px rgba(0, 255, 255, 0.3);
+    }
+
+    .card-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      background-color: #000;
+      border-bottom: 1px solid #2c2c2c;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .card-subject,
+    .card-status,
+    .card-countdown {
+      font-size: 13px;
+      color: #bbbbbb;
+      margin: 4px 0;
+    }
+
+    .loading-text {
+      font-size: 16px;
+      color: #cccccc;
+      margin-top: 40px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0.4;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .card-link, .live-card {
+        width: 95%;
+      }
+
+      .card-grid {
+        gap: 16px;
+      }
+
+      .card-title {
+        font-size: 17px;
+      }
+
+      .tab-button {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="live-classes-container">
+    <h2>🔴 Live Classes - Future Toppers</h2>
+    <div class="tabs-wrapper">
+      <button class="tab-button active" onclick="switchTab('live')">Live</button>
+      <button class="tab-button" onclick="switchTab('upcoming')">Upcoming</button>
+      <button class="tab-button" onclick="switchTab('completed')">Completed</button>
+    </div>
 
-  <!-- Glowing background -->
-  <canvas id="bg"></canvas>
-
-  <header>
-    <h1>📚 Future Toppers</h1>
-    <input type="text" id="searchInput" placeholder="Search subject...">
-<section id="noticeSection">
-  <h2>📢 Notice</h2>
-  <ul>
-    <li><strong>Today's Lecture:</strong></li>
-    
-    <li>🌍 SST – 5 PM</li>
-    <li>➗ MATHS – 8 PM</li>
-  </ul>
-</section>
-<section id="liveSection">
-  <h2>🔴 Live Classes</h2>
-  <div class="live-grid">
-<a class="live-card" id="sst-live" href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://dga9kme080o0w.cloudfront.net/out/v1/90ab1354cfcd4c5b83cf78a87d96041e/index_3.m3u8" target="_blank" style="pointer-events: none; opacity: 0.6;">
-  <span>🌏</span>
-  <h3>SST - 5 PM</h3>
-  <p id="sst-countdown">⏳ Countdown loading...</p>
-</a>
-
-<a class="live-card" id="maths-live" href="#" target="_blank" style="pointer-events: none; opacity: 0.6;">
-  <span>➗</span>
-  <h3>MATHS - 8 PM</h3>
-  <p id="maths-countdown">⏳ Countdown loading...</p>
-</a>
-  </div>
-</section>
-
-
-  </header>
-
-  <div class="grid" id="subjectGrid">
-    <a class="card" href="https://futuretoppersmaths.netlify.app/"><span>➗</span>Maths</a>
-    <a class="card" href="https://futuretoppersscience89.netlify.app/"><span>🧪</span>Science</a>
-    <a class="card" href="https://futuretopperssst68.netlify.app/"><span>🌍</span>SST</a>
-    <a class="card" href="https://futuretoppershindi.netlify.app/"><span>📝</span>Hindi</a>
-    <a class="card" href="https://futuretoppersenglish89.netlify.app/"><span>📘</span>English</a>
-    <a class="card" href="https://futureyopperssanskrit.netlify.app/"><span>📜</span>Sanskrit</a>
-    <a class="card" href="https://futuretoppersitai89.netlify.app/"><span>💻</span>AI / IT</a>
-    <a class="card" href="https://futuretoppersdppvault.netlify.app/"><span>🔐</span>DPP Vault</a>
+    <div id="cardGrid" class="card-grid"></div>
+    <p id="loading" class="loading-text">⏳ Loading...</p>
   </div>
 
-  <footer>
-    Made with 💙 by Future Toppers
-  </footer>
-
   <script>
-    const input = document.getElementById('searchInput');
-    const cards = document.querySelectorAll('.card');
-    input.addEventListener('input', () => {
-      const val = input.value.toLowerCase();
-      cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(val) ? 'block' : 'none';
-      });
-    });
-  </script>
+    const tabs = ["live", "upcoming", "completed"];
+    const subjectMap = {
+      "35848": "Maths",
+      "35850": "Science",
+      "35849": "SST"
+    };
+    const GITHUB_API_BASE = "https://automation9thphp.vercel.app/api/api.php?token=my_secret_key123&view=";
 
-  <!-- Particle background animation -->
-  <script>
-    const canvas = document.getElementById("bg");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    let data = {};
+    let currentTab = "live";
 
-    let particles = [];
-    for (let i = 0; i < 100; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 1,
-        dx: (Math.random() - 0.5) * 0.8,
-        dy: (Math.random() - 0.5) * 0.8
-      });
+    function formatTime(unix) {
+      const d = new Date(parseInt(unix) * 1000);
+      return d.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
     }
 
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "#00f0ff88";
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    function formatDuration(seconds) {
+      const s = parseInt(seconds || "0", 10);
+      if (isNaN(s) || s <= 0) return "—";
+      const mins = Math.floor(s / 60);
+      const hrs = Math.floor(mins / 60);
+      const remMin = mins % 60;
+      return hrs > 0 ? `${hrs}h ${remMin}m` : `${remMin}m`;
+    }
+
+    function countdownTo(unix) {
+      const ms = parseInt(unix) * 1000 - Date.now();
+      if (ms < 0) return "🔴 Starting soon";
+      const mins = Math.floor(ms / 60000);
+      const hrs = Math.floor(mins / 60);
+      const remMin = mins % 60;
+      return `🕒 ${hrs}h ${remMin}m left`;
+    }
+
+    function renderCard(item, tab) {
+      const subject = subjectMap[item.payload.topic_id] || "Unknown";
+      const fileUrl = item.file_url;
+      const title = item.title || "Untitled";
+      const thumb = item.thumbnail_url || "https://decicqog4ulhy.cloudfront.net/0/admin_v1/application_management/clientlogo/43702225407521371540_next_topper_logo%20%281%29.png";
+      const startAt = formatTime(item.start_date);
+      const endAt = formatTime(item.end_date);
+      const duration = formatDuration(item.video_length || item.playtime || 0);
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "card-link";
+
+      const card = document.createElement("div");
+      card.className = `live-card ${tab}`;
+      card.innerHTML = `
+        <img src="${thumb}" alt="Thumbnail for ${title}" class="card-image" />
+        <div class="card-content">
+          <h3 class="card-title">${title}</h3>
+          <p class="card-subject">📘 ${subject}</p>
+          ${
+            tab === "live"
+              ? `<p class="card-status">🔴 Live Now</p>
+                 <p class="card-countdown">🗓️ Start: ${startAt}</p>
+                 <p class="card-countdown">🕓 End: ${endAt}</p>
+                 <p class="card-countdown">⏱️ Duration: ${duration}</p>`
+              : tab === "upcoming"
+              ? `<p class="card-countdown">${countdownTo(item.start_date)}</p>
+                 <p class="card-countdown">🗓️ Start: ${startAt}</p>
+                 <p class="card-countdown">🕓 End: ${endAt}</p>
+                 <p class="card-status">🟡 Scheduled</p>`
+              : `<p class="card-status">✅ Completed</p>
+                 <p class="card-countdown">🗓️ Start: ${startAt}</p>
+                 <p class="card-countdown">🕓 End: ${endAt}</p>
+                 <p class="card-countdown">⏱️ Duration: ${duration}</p>`
+          }
+        </div>`;
+
+      if (tab === "live" || tab === "completed") {
+        card.addEventListener("click", () => {
+          window.location.href = `https://studyverse-network.netlify.app/next-toppers?url=${encodeURIComponent(fileUrl)}`;
+        });
       }
-      requestAnimationFrame(animate);
+
+      wrapper.appendChild(card);
+      return wrapper;
     }
 
-    animate();
+    function switchTab(tab) {
+      currentTab = tab;
+      document.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
+      document.querySelector(`.tab-button:nth-child(${tabs.indexOf(tab) + 1})`).classList.add("active");
+      renderCards();
+    }
 
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
-  <script>
-  function startCountdown(hour, minute, countdownId, cardId, joinUrl) {
-    const countdown = document.getElementById(countdownId);
-    const card = document.getElementById(cardId);
+    function renderCards() {
+      const grid = document.getElementById("cardGrid");
+      const loading = document.getElementById("loading");
+      grid.innerHTML = "";
+      loading.style.display = "none";
 
-    function update() {
-      const now = new Date();
-      let target = new Date();
-      target.setHours(hour, minute, 0, 0);
-
-      // If class time already passed, show "Live Now"
-      if (now >= target) {
-        countdown.textContent = "🔴 Live Now";
-        card.href = joinUrl;
-        card.style.pointerEvents = "auto";
-        card.style.opacity = "1";
+      if (!data[currentTab] || data[currentTab].length === 0) {
+        grid.innerHTML = "<p>No classes found.</p>";
         return;
       }
 
-      const diff = target - now;
-      const hrs = Math.floor(diff / (1000 * 60 * 60));
-      const mins = Math.floor((diff / (1000 * 60)) % 60);
-      const secs = Math.floor((diff / 1000) % 60);
-      countdown.textContent = `⏳ Starts in: ${hrs}h ${mins}m ${secs}s`;
+      data[currentTab].forEach(item => {
+        grid.appendChild(renderCard(item, currentTab));
+      });
     }
 
-    update();
-    setInterval(update, 1000);
-  }
+    async function fetchData() {
+      const loading = document.getElementById("loading");
+      loading.style.display = "block";
+      for (const tab of tabs) {
+        try {
+          const res = await fetch(`${GITHUB_API_BASE}${tab}`);
+          const json = await res.json();
+          data[tab] = json.data || [];
+        } catch (e) {
+          data[tab] = [];
+          document.getElementById("loading").innerText = `⚠️ Failed to load ${tab} classes`;
+        }
+      }
+      renderCards();
+    }
 
-  // Start countdowns
-  startCountdown(17, 0, "sst-countdown", "sst-live", "https://live331646.netlify.app/?link=SST_LIVE_M3U8_LINK");
-  startCountdown(20, 0, "maths-countdown", "maths-live", "https://live331646.netlify.app/?link=MATHS_LIVE_M3U8_LINK");
-
+    fetchData();
   </script>
-
 </body>
-</html>
+        </html>
