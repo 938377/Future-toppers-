@@ -191,17 +191,17 @@
 <section id="liveSection">
   <h2>🔴 Live Classes</h2>
   <div class="live-grid">
-    <a class="live-card" href="https://live331646.netlify.app/?link=" target="_blank">
-      <span>🌏</span>
-      <h3>SST - 5 PM</h3>
-      <p>Join the live class on time!</p>
-    </a>
+<a class="live-card" id="sst-live" href="#" target="_blank" style="pointer-events: none; opacity: 0.6;">
+  <span>🌏</span>
+  <h3>SST - 5 PM</h3>
+  <p id="sst-countdown">⏳ Countdown loading...</p>
+</a>
 
-    <a class="live-card" href="https://live331646.netlify.app/?link=" target="_blank">
-      <span>➗</span>
-      <h3>MATHS - 8 PM</h3>
-      <p>Live session tonight. Be ready!</p>
-    </a>
+<a class="live-card" id="maths-live" href="#" target="_blank" style="pointer-events: none; opacity: 0.6;">
+  <span>➗</span>
+  <h3>MATHS - 8 PM</h3>
+  <p id="maths-countdown">⏳ Countdown loading...</p>
+</a>
   </div>
 </section>
 
@@ -274,6 +274,40 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
+    <script>
+  function startCountdown(hour, minute, countdownId, cardId, joinUrl) {
+    const countdown = document.getElementById(countdownId);
+    const card = document.getElementById(cardId);
+
+    function update() {
+      const now = new Date();
+      let target = new Date();
+      target.setHours(hour, minute, 0, 0);
+
+      // If class time already passed, show "Live Now"
+      if (now >= target) {
+        countdown.textContent = "🔴 Live Now";
+        card.href = joinUrl;
+        card.style.pointerEvents = "auto";
+        card.style.opacity = "1";
+        return;
+      }
+
+      const diff = target - now;
+      const hrs = Math.floor(diff / (1000 * 60 * 60));
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+      countdown.textContent = `⏳ Starts in: ${hrs}h ${mins}m ${secs}s`;
+    }
+
+    update();
+    setInterval(update, 1000);
+  }
+
+  // Start countdowns
+  startCountdown(17, 0, "sst-countdown", "sst-live", "https://live331646.netlify.app/?link=SST_LIVE_M3U8_LINK");
+  startCountdown(20, 0, "maths-countdown", "maths-live", "https://live331646.netlify.app/?link=MATHS_LIVE_M3U8_LINK");
+</script>
   </script>
 
 </body>
