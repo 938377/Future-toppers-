@@ -3,196 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MATHS - Future Toppers</title>
-  
-    <style>
-  .glow-btn {
-    display: inline-block;
-    margin: 5px 10px;
-    padding: 8px 16px;
-    color: white;
-    background: #5b2cff;
-    border-radius: 10px;
-    text-decoration: none;
-    box-shadow: 0 0 12px #5b2cff;
-    transition: 0.3s ease;
-  }
-
-  .glow-btn:hover {
-    background: #7a44ff;
-    box-shadow: 0 0 18px #8e5fff, 0 0 25px #8e5fff;
-    transform: scale(1.05);
-  }
-
-  .chapter-card {
-    background: #1a1a1a;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
-  }
-
-  .chapter-title {
-    font-size: 1.5rem;
-    color: #fff;
-    margin-bottom: 10px;
-    text-shadow: 0 0 8px #8e5fff;
-  }
-
-  .lesson {
-    margin: 8px 0;
-    color: #ccc;
-  }
-
-  .lesson span {
-    font-weight: bold;
-    color: #fff;
-    margin-right: 10px;
-  }
-
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  <title>Number System - Future Toppers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      background: #0f0f1a;
+      background: #0d0d0d;
       color: white;
       overflow-x: hidden;
     }
-
-    header {
-      text-align: center;
-      padding: 20px;
-      font-size: 2rem;
-      font-weight: bold;
-      background: linear-gradient(90deg, #ff00cc, #3333ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    section {
-      padding: 20px;
-      z-index: 2;
-      position: relative;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      color: #00ffe5;
-    }
-
-    .lecture {
-      margin-bottom: 20px;
-    }
-
-    .link-buttons {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 5px;
-    }
-
-    .link-buttons a {
-      background: linear-gradient(145deg, #ff00cc, #3333ff);
-      color: white;
-      padding: 10px 16px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 12px #ff00cc;
-      transition: all 0.3s ease;
-    }
-
-    .link-buttons a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #00f0ff, 0 0 40px #ff00ff;
-    }
-
-    #particles-js {
+    .particles {
       position: fixed;
       width: 100%;
       height: 100%;
-      background: #0f0f1a;
-      z-index: 0;
-      top: 0;
-      left: 0;
+      z-index: -1;
+    }
+    .chapter-card {
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      max-width: 700px;
+      box-shadow: 0 0 20px #00f0ff50;
+    }
+    .chapter-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #00f0ff;
+      text-shadow: 0 0 10px #00f0ff;
+    }
+    .lesson {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .lesson span {
+      font-weight: bold;
+      color: #ffb800;
+      width: 60px;
+    }
+    .lesson a {
+      text-decoration: none;
+      background: #00f0ff;
+      color: black;
+      padding: 10px 16px;
+      margin: 5px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.3s ease;
+      box-shadow: 0 0 10px #00f0ff90;
+    }
+    .lesson a:hover {
+      background: #00bbcc;
+      box-shadow: 0 0 15px #00e6ff;
     }
   </style>
 </head>
 <body>
-  <div id="particles-js"></div>
-<!-- Number System -->
-<div class="chapter-card">
-  <h2 class="chapter-title">Number System</h2>
+  <canvas class="particles"></canvas>
 
-  <div class="lesson">
-    <span>L1:</span>
-    <a href="https://youtu.be/F6v_8tOEYrc" class="glow-btn">Watch Video</a>
-    <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/630773142527132200.pdf" class="glow-btn">Access Notes</a>
+  <div class="chapter-card">
+    <h2 class="chapter-title">Number System</h2>
+
+    <div class="lesson"><span>L1:</span><a href="https://youtu.be/F6v_8tOEYrc">Watch Video</a><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/630773142527132200.pdf">Access Notes</a></div>
+
+    <div class="lesson"><span>L2:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4360152/174550928629871097666/174550928629871097666_1097666.m3u8">Watch Video</a><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/289476255780218430.pdf">Access Notes</a></div>
+
+    <div class="lesson"><span>L3:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4361156/174558576440391097666/174558576440391097666_1097666.m3u8">Watch Video</a><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/146415667329121730.pdf">Access Notes</a></div>
+
+    <div class="lesson"><span>L4:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4362008/174567183539581097666/174567183539581097666_1097666.m3u8">Watch Video</a><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/366564110685032770.pdf">Access Notes</a></div>
+
+    <div class="lesson"><span>L5:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4367149/174611361544421097666/174611361544421097666_1097666.m3u8">Watch Video</a><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/434141207850167900.pdf">Access Notes</a></div>
+
+    <div class="lesson"><span>L6:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4368222/174619110643541097666/174619110643541097666_1097666.m3u8">Watch Video</a><a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/989861Number%20System%20L6.pdf_Number%20System%20L6.pdf">Access Notes</a></div>
+
+    <div class="lesson"><span>L7:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4370049/174627933537761097666/174627933537761097666_1097666.m3u8">Watch Video</a><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/566549363460292200.pdf">Access Notes</a></div>
+
   </div>
 
-  <div class="lesson">
-    <span>L2:</span>
-    <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4360152/174550928629871097666/174550928629871097666_1097666.m3u8" class="glow-btn">Watch Video</a>
-    <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/289476255780218430.pdf" class="glow-btn">Access Notes</a>
-  </div>
-
-  <div class="lesson">
-    <span>L3:</span>
-    <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4361156/174558576440391097666/174558576440391097666_1097666.m3u8" class="glow-btn">Watch Video</a>
-    <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/146415667329121730.pdf" class="glow-btn">Access Notes</a>
-  </div>
-
-  <div class="lesson">
-    <span>L4:</span>
-    <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4362008/174567183539581097666/174567183539581097666_1097666.m3u8" class="glow-btn">Watch Video</a>
-    <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/366564110685032770.pdf" class="glow-btn">Access Notes</a>
-  </div>
-
-  <div class="lesson">
-    <span>L5:</span>
-    <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4367149/174611361544421097666/174611361544421097666_1097666.m3u8" class="glow-btn">Watch Video</a>
-    <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/434141207850167900.pdf" class="glow-btn">Access Notes</a>
-  </div>
-
-  <div class="lesson">
-    <span>L6:</span>
-    <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4368222/174619110643541097666/174619110643541097666_1097666.m3u8" class="glow-btn">Watch Video</a>
-    <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/989861Number%20System%20L6.pdf_Number%20System%20L6.pdf" class="glow-btn">Access Notes</a>
-  </div>
-
-  <div class="lesson">
-    <span>L7:</span>
-    <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4370049/174627933537761097666/174627933537761097666_1097666.m3u8" class="glow-btn">Watch Video</a>
-    <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/566549363460292200.pdf" class="glow-btn">Access Notes</a>
-  </div>
-</div>
-  </section>
-
-  <!-- Load Particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- tsParticles script -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
   <script>
-    particlesJS("particles-js", {
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: true },
       particles: {
         number: { value: 80 },
-        color: { value: "#ffffff" },
+        color: { value: "#00f0ff" },
         shape: { type: "circle" },
-        opacity: { value: 0.3 },
+        opacity: { value: 0.5 },
         size: { value: 3 },
-        move: {
-          enable: true,
-          speed: 1,
-          direction: "none",
-          out_mode: "bounce"
-        }
+        move: { enable: true, speed: 1 }
       },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: "repulse" }
-        }
-      }
+      background: { color: "#0d0d0d" }
     });
   </script>
 </body>
-        </html>
+</html>
