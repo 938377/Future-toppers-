@@ -3,30 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Live Classes - Future Toppers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <title>Live Classes - Future toppers</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(ellipse at top left, #0a0a0a, #000);
-      color: #e0e0e0;
-      overflow-x: hidden;
-    }
-
     .live-classes-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 32px 16px;
+      padding: 24px 16px;
+      background: #121212;
+      color: #e0e0e0;
       text-align: center;
+      font-family: Arial, sans-serif;
     }
 
-    h2 {
-      font-size: 36px;
-      font-weight: 700;
+    /* ✅ Heading */
+    .live-classes-container h2 {
+      font-size: 32px;
+      font-weight: bold;
       margin-bottom: 24px;
       color: #ffffff;
-      text-shadow: 0 0 12px #00f0ff;
     }
 
     .tabs-wrapper {
@@ -38,27 +32,25 @@
     }
 
     .tab-button {
-      background: #121212;
-      border: 1px solid #00f0ff;
-      border-radius: 10px;
-      color: #00f0ff;
-      padding: 10px 24px;
+      background: #1f1f1f;
+      border: 1px solid #333;
+      border-radius: 8px;
+      color: #e0e0e0;
+      padding: 10px 22px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+      text-decoration: none;
     }
 
     .tab-button:hover {
-      background: #0e0e0e;
+      background: #2a2a2a;
       transform: scale(1.05);
-      box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
     }
 
     .tab-button.active {
-      background: #00f0ff;
-      color: #000;
-      box-shadow: 0 0 18px #00f0ff;
+      background: #ffffff;
+      color: #121212;
     }
 
     .card-grid {
@@ -76,20 +68,21 @@
     }
 
     .live-card {
-      background: #161616;
-      border: 1px solid #2b2b2b;
+      width: 100%;
+      background: #1f1f1f;
+      border: 1px solid #333;
       border-radius: 16px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, background 0.3s ease;
       text-align: left;
-      box-shadow: 0 0 12px rgba(0, 255, 255, 0.08);
     }
 
     .live-card:hover {
+      background: #2a2a2a;
       transform: translateY(-6px);
-      box-shadow: 0 0 16px rgba(0, 255, 255, 0.3);
     }
 
     .card-image {
@@ -98,7 +91,7 @@
       display: block;
       object-fit: contain;
       background-color: #000;
-      border-bottom: 1px solid #2c2c2c;
+      border-bottom: 1px solid #333;
     }
 
     .card-content {
@@ -110,6 +103,7 @@
       font-weight: bold;
       color: #ffffff;
       margin-bottom: 6px;
+      text-decoration: none;
     }
 
     .card-subject,
@@ -118,23 +112,19 @@
       font-size: 13px;
       color: #bbbbbb;
       margin: 4px 0;
+      text-decoration: none;
     }
 
     .loading-text {
       font-size: 16px;
       color: #cccccc;
       margin-top: 40px;
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      50% {
-        opacity: 0.4;
-      }
+      text-align: center;
     }
 
     @media (max-width: 768px) {
-      .card-link, .live-card {
+      .card-link,
+      .live-card {
         width: 95%;
       }
 
@@ -145,16 +135,12 @@
       .card-title {
         font-size: 17px;
       }
-
-      .tab-button {
-        flex: 1 1 100%;
-      }
     }
   </style>
 </head>
 <body>
   <div class="live-classes-container">
-    <h2>🔴 Live Classes - Future Toppers</h2>
+    <h2>🔴 Live Classes</h2>
     <div class="tabs-wrapper">
       <button class="tab-button active" onclick="switchTab('live')">Live</button>
       <button class="tab-button" onclick="switchTab('upcoming')">Upcoming</button>
@@ -215,7 +201,7 @@
       const card = document.createElement("div");
       card.className = `live-card ${tab}`;
       card.innerHTML = `
-        <img src="${thumb}" alt="Thumbnail for ${title}" class="card-image" />
+        <img src="${thumb}" alt="${title}" class="card-image" />
         <div class="card-content">
           <h3 class="card-title">${title}</h3>
           <p class="card-subject">📘 ${subject}</p>
@@ -237,6 +223,7 @@
           }
         </div>`;
 
+      // Click to redirect (live + completed)
       if (tab === "live" || tab === "completed") {
         card.addEventListener("click", () => {
           window.location.href = `https://studyverse-network.netlify.app/next-toppers?url=${encodeURIComponent(fileUrl)}`;
@@ -280,17 +267,12 @@
           data[tab] = json.data || [];
         } catch (e) {
           data[tab] = [];
-          document.getElementById("loading").innerText = `⚠️ Failed to load ${tab} classes`;
         }
       }
       renderCards();
     }
 
-    async function init() {
-  await fetchData();
-  renderCards();
-}
-init();
+    fetchData();
   </script>
 </body>
-        </html>
+</html>
