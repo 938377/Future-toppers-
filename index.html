@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Future Toppers - Live Classes</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
   <style>
@@ -14,147 +14,124 @@
     }
 
     body {
-      background: #0d0d0d;
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem;
+      background-color: #0d0d0d;
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    h1::before {
-      content: "🔴";
+      font-size: 2em;
+      margin-bottom: 20px;
     }
 
     .tabs {
       display: flex;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+      justify-content: center;
+      margin-bottom: 20px;
+      gap: 10px;
     }
 
-    .tab {
-      padding: 0.5rem 1.2rem;
+    .tabs button {
+      padding: 10px 20px;
       border-radius: 10px;
-      background: #1a1a1a;
-      color: #aaa;
+      border: 2px solid #444;
+      background-color: transparent;
+      color: white;
       cursor: pointer;
-      border: 1px solid #333;
-      transition: 0.3s;
+      transition: 0.2s;
     }
 
-    .tab.active {
-      background: #ffffff;
-      color: #000;
-      font-weight: bold;
+    .tabs button.active {
+      background-color: white;
+      color: black;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
 
     .card {
-      background: #1a1a1a;
+      background-color: #1a1a1a;
       border: 1px solid #333;
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 255, 200, 0.1);
-      margin-bottom: 1rem;
-      width: 100%;
-      max-width: 600px;
+      padding: 15px;
+      border-radius: 15px;
+      text-align: left;
+      max-width: 500px;
+      margin: 0 auto;
     }
 
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.3rem;
-      color: #0ff;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: #ccc;
-    }
-
-    #cards {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .card a {
+      color: #00ffff;
+      text-decoration: underline;
     }
 
     footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #666;
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <h1>Live Classes</h1>
+  <h1>🔴 Live Classes</h1>
   <div class="tabs">
-    <div class="tab active" onclick="switchTab('live')">Live</div>
-    <div class="tab" onclick="switchTab('upcoming')">Upcoming</div>
-    <div class="tab" onclick="switchTab('completed')">Completed</div>
+    <button onclick="switchTab('live')" id="liveTab" class="active">Live</button>
+    <button onclick="switchTab('upcoming')" id="upcomingTab">Upcoming</button>
+    <button onclick="switchTab('completed')" id="completedTab">Completed</button>
   </div>
-
-  <div id="cards">Loading...</div>
-
-  <footer>
-    &copy; 2025 Future Toppers. All rights reserved.
-  </footer>
+  <div class="cards" id="cardContainer">Loading...</div>
+  <footer>© 2025 Future Toppers. All rights reserved.</footer>
 
   <script>
-    let currentTab = 'live';
     let data = {
       live: [],
       upcoming: [],
       completed: []
     };
-
-    function switchTab(tab) {
-      currentTab = tab;
-      document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
-      document.querySelector(`.tab:nth-child(${tab === 'live' ? 1 : tab === 'upcoming' ? 2 : 3})`).classList.add('active');
-      renderCards();
-    }
+    let currentTab = 'live';
 
     async function fetchData() {
       try {
-        const res = await fetch('https://api.npoint.io/5d2ef1cb843c49b94a5c');
+        const res = await fetch("https://api.npoint.io/c7e6a3c6dfb5cfad4a12");
         const json = await res.json();
         data = json;
       } catch (err) {
-        console.error("Error loading class data", err);
+        document.getElementById("cardContainer").innerHTML = "<p>⚠️ Failed to load classes.</p>";
+        console.error(err);
       }
     }
 
     function renderCards() {
-      const container = document.getElementById('cards');
-      container.innerHTML = '';
+      const container = document.getElementById("cardContainer");
+      const list = data[currentTab];
 
-      const items = data[currentTab];
-      if (!items || items.length === 0) {
-        container.innerHTML = '<p>No classes found.</p>';
+      if (!list || list.length === 0) {
+        container.innerHTML = "<p>No classes found.</p>";
         return;
       }
 
-      items.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
+      container.innerHTML = "";
+      list.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "card";
+        div.innerHTML = `
           <h3>${item.title}</h3>
-          <p><strong>Subject:</strong> ${item.subject}</p>
-          <p><strong>Teacher:</strong> ${item.teacher}</p>
-          <p><strong>Time:</strong> ${item.time}</p>
-          <p><a href="${item.link}" target="_blank" style="color:#0ff;">Join Now</a></p>
+          <p>Subject: ${item.subject}</p>
+          <p>Time: ${item.time}</p>
+          <a href="${item.link}" target="_blank">Join Class</a>
         `;
-        container.appendChild(card);
+        container.appendChild(div);
       });
+    }
+
+    function switchTab(tab) {
+      currentTab = tab;
+      document.querySelectorAll(".tabs button").forEach(btn => btn.classList.remove("active"));
+      document.getElementById(tab + "Tab").classList.add("active");
+      renderCards();
     }
 
     async function init() {
