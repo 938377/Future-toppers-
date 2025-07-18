@@ -1,315 +1,169 @@
-<!-- Paste this full updated HTML in your index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Future Toppers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Future toppers- Class 9 DPP Vault</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    a.live-card {
-  text-decoration: none;
-  color: inherit;
-    }
-    #liveSection {
-  max-width: 1100px;
-  margin: 1rem auto 2rem;
-  padding: 0 1rem;
-  text-align: center;
+    #particles-js {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
-
-#liveSection h2 {
-  font-size: 1.6rem;
-  color: #ff4a4a;
-  text-shadow: 0 0 8px #ff4a4a88;
-  margin-bottom: 1.5rem;
-}
-
-.live-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-.live-card {
-  background: rgba(255, 74, 74, 0.12);
-  border-left: 4px solid #ff4a4a;
-  border-radius: 18px;
-  padding: 1.5rem;
-  color: white;
-  box-shadow: 0 0 12px #ff4a4a55;
-  transition: transform 0.3s ease;
-  backdrop-filter: blur(12px);
-}
-
-.live-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 22px #ff4a4acc;
-}
-
-.live-card span {
-  font-size: 2.2rem;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-
-.live-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.live-card p {
-  font-size: 0.95rem;
-  color: #ddd;
-}
-  #noticeSection {
-  max-width: 800px;
-  margin: 1rem auto 2rem;
-  background: rgba(0, 240, 255, 0.1);
-  padding: 1.5rem 2rem;
-  border-left: 4px solid #00f0ff;
-  border-radius: 16px;
-  box-shadow: 0 0 12px #00f0ff44;
-  backdrop-filter: blur(10px);
-  color: white;
-}
-
-#noticeSection h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #00f0ff;
-  text-shadow: 0 0 8px #00f0ff88;
-}
-
-#noticeSection ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#noticeSection li {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #0f0f1a;
-      overflow-x: hidden;
-      color: white;
+      background: linear-gradient(135deg, #0b0c17, #1e1038, #140912);
+      color: #fff;
     }
-
-    canvas#bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      z-index: -1;
-    }
-
     header {
-      text-align: center;
-      padding: 2rem 1rem 1rem;
+      background: rgba(0, 102, 204, 0.9);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 30px rgba(0, 102, 204, 0.5);
     }
-
-    header h1 {
-      font-size: 2.2rem;
-      color: #00f0ff;
-      text-shadow: 0 0 15px #00f0ff55;
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
     }
-
-    #searchInput {
-      margin-top: 1rem;
-      padding: 0.6rem 1rem;
-      font-size: 1rem;
-      border-radius: 12px;
-      border: none;
-      background: rgba(255,255,255,0.1);
-      color: white;
-      outline: none;
-      box-shadow: 0 0 12px #00f0ff33;
+    .logo-container img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(0, 102, 204, 0.8), 0 0 25px rgba(0, 102, 204, 0.5);
     }
-
-    .grid {
-      max-width: 1100px;
-      margin: 2rem auto;
+    .logo-container h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      animation: float 2.5s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    .chapters {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem 1rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      padding: 0 1rem 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
     }
-
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 20px;
-      padding: 2rem;
+    .chapter-card {
+      background: rgba(15, 10, 30, 0.9);
+      border: 1px solid rgba(0, 102, 204, 0.3);
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+      transition: 0.3s;
+    }
+    .chapter-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 102, 204, 0.5);
+    }
+    .chapter-title {
+      font-size: 1.5rem;
+      color: #38bdf8;
+      margin-bottom: 1rem;
       text-align: center;
-      backdrop-filter: blur(14px);
+    }
+    .lesson {
+      margin-bottom: 0.75rem;
+    }
+    .lesson span {
+      font-weight: bold;
+    }
+    .lesson a.watch {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: linear-gradient(to right, #06b6d4, #3b82f6);
       color: white;
-      font-weight: 600;
+      padding: 0.4rem 0.9rem;
+      border-radius: 8px;
       text-decoration: none;
-      box-shadow: 0 0 15px rgba(0,255,255,0.1);
-      transition: all 0.4s ease;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
     }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #00f0ffcc;
-    }
-
-    .card span {
-      display: block;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #aaa;
+    .lesson a.watch:hover {
+      background: linear-gradient(to right, #3b82f6, #06b6d4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.6);
     }
   </style>
 </head>
 <body>
-
-  <!-- Glowing background -->
-  <canvas id="bg"></canvas>
-
   <header>
-    <h1>📚 Future Toppers</h1>
-    <input type="text" id="searchInput" placeholder="Search subject...">
-<section id="noticeSection">
-  <h2>📢 Notice</h2>
-  <ul>
-    <li><strong>Today's Lecture:</strong></li>
-    
+    <div class="logo-container">
+ <img src="" alt="DPP">
 
-    <li>➗ MATHS – 5 PM </li>
-  </ul>
-</section>
-<section id="liveSection">
-  <h2>🔴 Live Classes</h2>
-  <div class="live-grid">
-<a class="live-card" id="sst-live" href="https://live331646.netlify.app/?link=https://d274dp7v20n4nf.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4484954/175275601327827125088/175275601327827125088_7125088.m3u8" target="_blank" style="pointer-events: none; opacity: 0.6;">
-  <span>➗</span>
-  <h3>Maths 5pm</h3>
-  <p id="sst-countdown">⏳ Countdown loading...</p>
-</a>
-
-<a class="live-card" id="maths-live" href="#" target="_blank" style="pointer-events: none; opacity: 0.6;">
-  <span></span>
-  <h3>NO CLASS</h3>
-  <p id="maths-countdown">⏳ Countdown loading...</p>
-</a>
-  </div>
-</section>
-
-
+      <h1>Class 9 DPP Vault- Future Toppers</h1>
+    </div>
   </header>
 
-  <div class="grid" id="subjectGrid">
-    <a class="card" href="https://mathsfuturetoppers89.netlify.app/"><span>➗</span>Maths</a>
-    <a class="card" href="https://futuretoppersscience.netlify.app/"><span>🧪</span>Science</a>
-    <a class="card" href="https://futuretopperssst89.netlify.app/"><span>🌍</span>SST</a>
-    <a class="card" href="https://futuretoppershindi.netlify.app/"><span>📝</span>Hindi</a>
-    <a class="card" href="https://futuretoppersenglish89.netlify.app/"><span>📘</span>English</a>
-    <a class="card" href="https://futureyopperssanskrit.netlify.app/"><span>📜</span>Sanskrit</a>
-    <a class="card" href="https://aiitfuturetoppers89.netlify.app/"><span>💻</span>AI / IT</a>
-    <a class="card" href="https://futuretoppersdppvault.netlify.app/"><span>🔐</span>DPP Vault</a>
-  </div>
+  <main class="chapters">
+    <!-- Mathematics -->
+    <div class="chapter-card">
+      <h2 class="chapter-title">Mathematics</h2>
+      <div class="lesson"><span>DPP #1:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/898364746538794500.pdf" class="watch">Access DPP</a></div>
+      <div class="lesson"><span>DPP #2:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/428966108575780160.pdf" class="watch">Access DPP</a></div>
+      <div class="lesson"><span>DPP #3:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/181500649969413280.pdf" class="watch">Access DPP</a></div>
+      <div class="lesson"><span>DPP #4:</span><a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/28274969th%20Aarambh%202026%20DPP%204.pdf.pdf_9th%20Aarambh%202026%20DPP%204.pdf.pdf" class="watch">Access DPP</a></div>
+      <div class="lesson"><span>DPP #5:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/451472104665231800.pdf" class="watch">Access DPP</a></div>
+      <div class="lesson"><span>DPP #6:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/312776641777327170.pdf" class="watch">Access DPP</a></div>
+      <div class="lesson"><span>DPP #7:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/94783851385362450.pdf" class="watch">Access DPP</a></div>
+      <div class="lesson"><span>DPP #8:</span><a href="" class="watch">Access DPP</a></div>
 
-  <footer>
-    Made with 💙 by Future Toppers
-  </footer>
+    </div>
 
+    <!-- Science -->
+    <div class="chapter-card">
+      <h2 class="chapter-title">Science</h2>
+      <div class="lesson"><span>ACP #1:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/843726780533647700.pdf" class="watch">Access ACP</a></div>
+      <div class="lesson"><span>ACP #2:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/21557976024604976.pdf" class="watch">Access ACP</a></div>
+      <div class="lesson"><span>ACP #3:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/622749551282561700.pdf" class="watch">Access ACP</a></div>
+      <div class="lesson"><span>ACP #4:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/85704322204293060.pdf" class="watch">Access ACP</a></div>
+      <div class="lesson"><span>ACP #5:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/269711461467700380.pdf" class="watch">Access ACP</a></div>
+<div class="lesson"><span>ACP #6:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/891316557988151900.pdf" class="watch">Access ACP</a></div>
+    </div>
+    </div>
+
+    <!-- Social Science (SST) -->
+    <div class="chapter-card">
+      <h2 class="chapter-title">Social Science (SST)</h2>
+      <div class="lesson"><span>WPP #1:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/531020738549552000.pdf" class="watch">Access WPP</a></div>
+      <div class="lesson"><span>WPP #2:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/708358583816420700.pdf" class="watch">Access WPP</a></div>
+      <div class="lesson"><span>WPP #3 with Solutions:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/30774060523153256.pdf" class="watch">Access WPP</a></div>
+      <div class="lesson"><span>WPP #1 Solutions:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/366929396803575550.pdf" class="watch">Access WPP Solution</a></div>
+      <div class="lesson"><span>WPP #4:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/646863224994390800.pdf" class="watch">Access WPP</a></div>
+      <div class="lesson"><span>WPP #5:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/675990108904463500.pdf" class="watch">Access WPP</a></div>
+<div class="lesson"><span>WPP #6:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/591262881755284400.pdf" class="watch">Access WPP</a></div>
+</div>
+  
+    </div>
+  
+</main>
+ <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<div id="particles-js"></div>
   <script>
-    const input = document.getElementById('searchInput');
-    const cards = document.querySelectorAll('.card');
-    input.addEventListener('input', () => {
-      const val = input.value.toLowerCase();
-      cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(val) ? 'block' : 'none';
-      });
-    });
-  </script>
-
-  <!-- Particle background animation -->
-  <script>
-    const canvas = document.getElementById("bg");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let particles = [];
-    for (let i = 0; i < 100; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 1,
-        dx: (Math.random() - 0.5) * 0.8,
-        dy: (Math.random() - 0.5) * 0.8
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "#00f0ff88";
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      }
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
-  <script>
-  function startCountdown(hour, minute, countdownId, cardId, joinUrl) {
-    const countdown = document.getElementById(countdownId);
-    const card = document.getElementById(cardId);
-
-    function update() {
-      const now = new Date();
-      let target = new Date();
-      target.setHours(hour, minute, 0, 0);
-
-      // If class time already passed, show "Live Now"
-      if (now >= target) {
-        countdown.textContent = "🔴 Live Now";
-        card.href = joinUrl;
-        card.style.pointerEvents = "auto";
-        card.style.opacity = "1";
-        return;
-      }
-
-      const diff = target - now;
-      const hrs = Math.floor(diff / (1000 * 60 * 60));
-      const mins = Math.floor((diff / (1000 * 60)) % 60);
-      const secs = Math.floor((diff / 1000) % 60);
-      countdown.textContent = `⏳ Starts in: ${hrs}h ${mins}m ${secs}s`;
-    }
-
-    update();
-    setInterval(update, 1000);
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60, density: { enable: true, value_area: 800 } },
+    color: { value: "#38bdf8" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: { enable: true, speed: 1.5 }
   }
-
-  // Start countdowns
-  startCountdown(17, 0, "sst-countdown", "sst-live", "");
-  startCountdown(20, 0, "maths-countdown", "maths-live", "https://live331646.netlify.app/?link=MATHS_LIVE_M3U8_LINK");
-
+});
   </script>
-
 </body>
-</html>
+        </html>
+  
