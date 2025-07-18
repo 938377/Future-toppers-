@@ -1,314 +1,246 @@
-<!-- Paste this full updated HTML in your index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Future Toppers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Future Toppers- Class 9 Hindi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    a.live-card {
-  text-decoration: none;
-  color: inherit;
-    }
-    #liveSection {
-  max-width: 1100px;
-  margin: 1rem auto 2rem;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-#liveSection h2 {
-  font-size: 1.6rem;
-  color: #ff4a4a;
-  text-shadow: 0 0 8px #ff4a4a88;
-  margin-bottom: 1.5rem;
-}
-
-.live-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-.live-card {
-  background: rgba(255, 74, 74, 0.12);
-  border-left: 4px solid #ff4a4a;
-  border-radius: 18px;
-  padding: 1.5rem;
-  color: white;
-  box-shadow: 0 0 12px #ff4a4a55;
-  transition: transform 0.3s ease;
-  backdrop-filter: blur(12px);
-}
-
-.live-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 22px #ff4a4acc;
-}
-
-.live-card span {
-  font-size: 2.2rem;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-
-.live-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.live-card p {
-  font-size: 0.95rem;
-  color: #ddd;
-}
-  #noticeSection {
-  max-width: 800px;
-  margin: 1rem auto 2rem;
-  background: rgba(0, 240, 255, 0.1);
-  padding: 1.5rem 2rem;
-  border-left: 4px solid #00f0ff;
-  border-radius: 16px;
-  box-shadow: 0 0 12px #00f0ff44;
-  backdrop-filter: blur(10px);
-  color: white;
-}
-
-#noticeSection h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #00f0ff;
-  text-shadow: 0 0 8px #00f0ff88;
-}
-
-#noticeSection ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#noticeSection li {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #0f0f1a;
-      overflow-x: hidden;
-      color: white;
+      background: linear-gradient(135deg, #0b0c17, #1e1038, #140912);
+      color: #fff;
     }
-
-    canvas#bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      z-index: -1;
-    }
-
     header {
-      text-align: center;
-      padding: 2rem 1rem 1rem;
+      background: rgba(0, 102, 204, 0.9);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 30px rgba(0, 102, 204, 0.5);
     }
-
-    header h1 {
-      font-size: 2.2rem;
-      color: #00f0ff;
-      text-shadow: 0 0 15px #00f0ff55;
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
     }
-
-    #searchInput {
-      margin-top: 1rem;
-      padding: 0.6rem 1rem;
-      font-size: 1rem;
-      border-radius: 12px;
-      border: none;
-      background: rgba(255,255,255,0.1);
-      color: white;
-      outline: none;
-      box-shadow: 0 0 12px #00f0ff33;
+    .logo-container img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(0, 102, 204, 0.8), 0 0 25px rgba(0, 102, 204, 0.5);
     }
-
-    .grid {
-      max-width: 1100px;
-      margin: 2rem auto;
+    .logo-container h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      animation: float 2.5s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    .chapters {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem 1rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      padding: 0 1rem 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
     }
-
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 20px;
-      padding: 2rem;
+    .chapter-card {
+      background: rgba(15, 10, 30, 0.9);
+      border: 1px solid rgba(0, 102, 204, 0.3);
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+      transition: 0.3s;
+    }
+    .chapter-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 102, 204, 0.5);
+    }
+    .chapter-title {
+      font-size: 1.5rem;
+      color: #38bdf8;
+      margin-bottom: 1rem;
       text-align: center;
-      backdrop-filter: blur(14px);
+    }
+    .lesson {
+      margin-bottom: 0.75rem;
+    }
+    .lesson span {
+      font-weight: bold;
+    }
+    .lesson a.watch {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: linear-gradient(to right, #06b6d4, #3b82f6);
       color: white;
-      font-weight: 600;
+      padding: 0.4rem 0.9rem;
+      border-radius: 8px;
       text-decoration: none;
-      box-shadow: 0 0 15px rgba(0,255,255,0.1);
-      transition: all 0.4s ease;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
     }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #00f0ffcc;
-    }
-
-    .card span {
-      display: block;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #aaa;
+    .lesson a.watch:hover {
+      background: linear-gradient(to right, #3b82f6, #06b6d4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.6);
     }
   </style>
 </head>
 <body>
-
-  <!-- Glowing background -->
-  <canvas id="bg"></canvas>
-
   <header>
-    <h1>📚 Future Toppers</h1>
-    <input type="text" id="searchInput" placeholder="Search subject...">
-<section id="noticeSection">
-  <h2>📢 Notice</h2>
-  <ul>
-    <li><strong>Today's Lecture:</strong></li>
-    
+    <div class="logo-container">
+ <img src="" alt="Maths">
 
-    <li>➗ MATHS – 5 PM </li>
-  </ul>
-</section>
-<section id="liveSection">
-  <h2>🔴 Live Classes</h2>
-  <div class="live-grid">
-<a class="live-card" id="sst-live" href="https://live331646.netlify.app/?link=https://d274dp7v20n4nf.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4484954/175275601327827125088/175275601327827125088_7125088.m3u8" target="_blank" style="pointer-events: none; opacity: 0.6;">
-  <span>➗</span>
-  <h3>Maths 5pm</h3>
-  <p id="sst-countdown">⏳ Countdown loading...</p>
-</a>
-
-<a class="live-card" id="maths-live" href="#" target="_blank" style="pointer-events: none; opacity: 0.6;">
-  <span></span>
-  <h3>NO CLASS</h3>
-  <p id="maths-countdown">⏳ Countdown loading...</p>
-</a>
-  </div>
-</section>
-
-
+      <h1>Class 9 Hindi- Future Toppers</h1>
+           </div>
   </header>
+  <main class="chapters">
 
-  <div class="grid" id="subjectGrid">
-    <a class="card" href="https://mathsfuturetoppers89.netlify.app/"><span>➗</span>Maths</a>
-    <a class="card" href="https://futuretoppersscience.netlify.app/"><span>🧪</span>Science</a>
-    <a class="card" href="https://futuretopperssst89.netlify.app/"><span>🌍</span>SST</a>
-    <a class="card" href="https://futuretoppershindi.netlify.app/"><span>📝</span>Hindi</a>
-    <a class="card" href="https://futuretoppersenglish899.netlify.app/"><span>📘</span>English</a>
-    <a class="card" href="https://futureyopperssanskrit.netlify.app/"><span>📜</span>Sanskrit</a>
-    <a class="card" href="https://aiitfuturetoppers89.netlify.app/"><span>💻</span>AI / IT</a>
-    <a class="card" href="https://futuretoppersdppvault89.netlify.app/"><span>🔐</span>DPP Vault</a>
-  </div>
+<div class="chapter-card">
+  <h2 class="chapter-title">दो बैलों की कथा</h2>
+  <div class="lesson"><span>व्याख्या:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4367080/1746106806_8135080863582999/sunny/1746106442282_262131502527749950_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/5557404%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%A4%E0%A4%BF%E0%A4%9C%20%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%8B%20%E0%A4%AC%E0%A5%88%E0%A4%B2%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%80%20%E0%A4%95%E0%A4%A5%E0%A4%BE%20%20%28%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%29%20Vyakhya.pdf_%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%A4%E0%A4%BF%E0%A4%9C%20%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%8B%20%E0%A4%AC%E0%A5%88%E0%A4%B2%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%80%20%E0%A4%95%E0%A4%A5%E0%A4%BE%20%20%28%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%29%20Vyakhya.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>MCQs:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4366031/1746028505_8319272599648396/sunny/1746027182116_745126388311577200_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/1349591%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%A4%E0%A4%BF%E0%A4%9C%20%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%8B%20%E0%A4%AC%E0%A5%88%E0%A4%B2%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%80%20%E0%A4%95%E0%A4%A5%E0%A4%BE%20%20%28%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%29%20mcqs.pdf_%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%A4%E0%A4%BF%E0%A4%9C%20%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%8B%20%E0%A4%AC%E0%A5%88%E0%A4%B2%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%80%20%E0%A4%95%E0%A4%A5%E0%A4%BE%20%20%28%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%29%20mcqs.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>NCERT Solution:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4366032/1746028926_4756110292278530/sunny/1746027291560_828715216555113600_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/6858529%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%A4%E0%A4%BF%E0%A4%9C%20%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%8B%20%E0%A4%AC%E0%A5%88%E0%A4%B2%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%80%20%E0%A4%95%E0%A4%A5%E0%A4%BE%20%20%28%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%29%20ncert%20solution.pdf_%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%A4%E0%A4%BF%E0%A4%9C%20%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%8B%20%E0%A4%AC%E0%A5%88%E0%A4%B2%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%80%20%E0%A4%95%E0%A4%A5%E0%A4%BE%20%20%28%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%29%20ncert%20solution.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>Complete Chapter Revision:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4366030/1746028385_5555840611917236/sunny/1746027030840_510190781786052400_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/1305734%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%A4%E0%A4%BF%E0%A4%9C%20%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%8B%20%E0%A4%AC%E0%A5%88%E0%A4%B2%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%80%20%E0%A4%95%E0%A4%A5%E0%A4%BE%20%20%28%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%29%20complete%20chapter%20revision.pdf_%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%A4%E0%A4%BF%E0%A4%9C%20%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%8B%20%E0%A4%AC%E0%A5%88%E0%A4%B2%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%80%20%E0%A4%95%E0%A4%A5%E0%A4%BE%20%20%28%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%29%20complete%20chapter%20revision.pdf" class="watch">Access Notes</a></div>
+</div>
 
-  <footer>
-    Made with 💙 by Future Toppers
-  </footer>
+<div class="chapter-card">
+  <h2 class="chapter-title">ल्हासा की ओर</h2>
+  <div class="lesson"><span>व्याख्या:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376203/1746740285_7107764258422066/sunny/1746717777586_17737771606033458_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/767834%E0%A4%B2%E0%A5%8D%E0%A4%B9%E0%A4%BE%E0%A4%B8%E0%A4%BE%20%E0%A4%95%E0%A5%80%20%E0%A4%93%E0%A4%B0%20vyakha.pdf_%E0%A4%B2%E0%A5%8D%E0%A4%B9%E0%A4%BE%E0%A4%B8%E0%A4%BE%20%E0%A4%95%E0%A5%80%20%E0%A4%93%E0%A4%B0%20vyakha.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>MCQs:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376201/1746739924_4759946529826291/sunny/1746717110242_866673604247191900_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/1197437%E0%A4%B2%E0%A5%8D%E0%A4%B9%E0%A4%BE%E0%A4%B8%E0%A4%BE%20%E0%A4%95%E0%A5%80%20%E0%A4%93%E0%A4%B0%20mcqs.pdf_%E0%A4%B2%E0%A5%8D%E0%A4%B9%E0%A4%BE%E0%A4%B8%E0%A4%BE%20%E0%A4%95%E0%A5%80%20%E0%A4%93%E0%A4%B0%20mcqs.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>NCERT Solution:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376202/1746739984_8260503277960936/sunny/1746717515479_844372138106719900_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/2994156%E0%A4%B2%E0%A5%8D%E0%A4%B9%E0%A4%BE%E0%A4%B8%E0%A4%BE%20%E0%A4%95%E0%A5%80%20%E0%A4%93%E0%A4%B0%20ncert%20solutions.pdf_%E0%A4%B2%E0%A5%8D%E0%A4%B9%E0%A4%BE%E0%A4%B8%E0%A4%BE%20%E0%A4%95%E0%A5%80%20%E0%A4%93%E0%A4%B0%20ncert%20solutions.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>Complete Chapter Revision:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376200/1746739504_4859201909211251/sunny/1746716721540_653688282678292200_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/3916017%E0%A4%B2%E0%A5%8D%E0%A4%B9%E0%A4%BE%E0%A4%B8%E0%A4%BE%20%E0%A4%95%E0%A5%80%20%E0%A4%93%E0%A4%B0%20ccr.pdf_%E0%A4%B2%E0%A5%8D%E0%A4%B9%E0%A4%BE%E0%A4%B8%E0%A4%BE%20%E0%A4%95%E0%A5%80%20%E0%A4%93%E0%A4%B0%20ccr.pdf" class="watch">Access Notes</a></div>
+</div>
 
-  <script>
-    const input = document.getElementById('searchInput');
-    const cards = document.querySelectorAll('.card');
-    input.addEventListener('input', () => {
-      const val = input.value.toLowerCase();
-      cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(val) ? 'block' : 'none';
-      });
-    });
-  </script>
+<div class="chapter-card">
+  <h2 class="chapter-title">उपभोक्तावाद की संस्कृति</h2>
+  <div class="lesson"><span>व्याख्या:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376213/1746743104_8351129771375001/sunny/1746718066694_127223678751488050_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/465725984675991740.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>NCERT Solution:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376212/1746742805_8696796241526701/sunny/1746717822889_333289814431731650_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/403938581338102660.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>MCQs:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376211/1746742684_7364011012455828/sunny/1746717519871_770126071727227000_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/189689274663830460.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>Revision:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376210/1746742025_8611897352527872/sunny/1746716746643_661563793766941700_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/262781885648999230.pdf" class="watch">Access Notes</a></div>
+</div>
 
-  <!-- Particle background animation -->
-  <script>
-    const canvas = document.getElementById("bg");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+<div class="chapter-card">
+  <h2 class="chapter-title">साँवले सपनों की याद</h2>
+  <div class="lesson"><span>व्याख्या:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376207/1746738545_4076596448388957/sunny/1746719415853_826829136546676000_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span>NCERT Solution:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4391504/1748103304_2039914802212028/sunny/1748092512827_189480090668304200_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/770728368550350300.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>MCQs:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4391503/1748102945_9295347327198019/sunny/1748092390814_246902531730459780_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/3483607%E0%A4%B8%E0%A4%BE%E0%A4%81%E0%A4%B5%E0%A4%B2%E0%A5%87%20%E0%A4%B8%E0%A4%AA%E0%A4%A8%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%80%20%E0%A4%AF%E0%A4%BE%E0%A4%A6%20-%20MCQs.pdf_%E0%A4%B8%E0%A4%BE%E0%A4%81%E0%A4%B5%E0%A4%B2%E0%A5%87%20%E0%A4%B8%E0%A4%AA%E0%A4%A8%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%80%20%E0%A4%AF%E0%A4%BE%E0%A4%A6%20-%20MCQs.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>Revision:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4391505/1748103846_1872504026232330/sunny/1748092703606_806793085288063500_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/5043723%E0%A4%B8%E0%A4%BE%E0%A4%81%E0%A4%B5%E0%A4%B2%E0%A5%87%20%E0%A4%B8%E0%A4%AA%E0%A4%A8%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%80%20%E0%A4%AF%E0%A4%BE%E0%A4%A6%20-%20Complete%20chapter%20Revision..pdf_%E0%A4%B8%E0%A4%BE%E0%A4%81%E0%A4%B5%E0%A4%B2%E0%A5%87%20%E0%A4%B8%E0%A4%AA%E0%A4%A8%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%80%20%E0%A4%AF%E0%A4%BE%E0%A4%A6%20-%20Complete%20chapter%20Revision..pdf" class="watch">Access Notes</a></div>
+</div>
 
-    let particles = [];
-    for (let i = 0; i < 100; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 1,
-        dx: (Math.random() - 0.5) * 0.8,
-        dy: (Math.random() - 0.5) * 0.8
-      });
-    }
+<div class="chapter-card">
+  <h2 class="chapter-title">दुःख का अधिकार</h2>
+  <div class="lesson"><span>व्याख्या:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4362878/1745827504_8254022878891386/sunny/1745824657756_449406760596636800_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/7297203%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%20%E0%A4%95%E0%A4%BE%20%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B0%20%28%E0%A4%AF%E0%A4%B6%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%20%E0%A4%95%E0%A4%BE%20%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B0%20%28%E0%A4%AF%E0%A4%B6%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>MCQs:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4362881/1745828708_8027850534617536/sunny/1745825399600_638178197791770000_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/5296424%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%20%E0%A4%95%E0%A4%BE%20%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B0%20%28%E0%A4%AF%E0%A4%B6%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20Multiple%20Choice%20questions.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%20%E0%A4%95%E0%A4%BE%20%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B0%20%28%E0%A4%AF%E0%A4%B6%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20Multiple%20Choice%20questions.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>Revision:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4362877/1745828705_3761006170981689/sunny/1745824255110_166106644150187650_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/3878617_%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%20%E0%A4%95%E0%A4%BE%20%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B0%20%28%E0%A4%AF%E0%A4%B6%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20Complete%20chapter%20revision%20.pdf__%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%20%E0%A4%95%E0%A4%BE%20%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B0%20%28%E0%A4%AF%E0%A4%B6%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20Complete%20chapter%20revision%20.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/285701_%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%20%E0%A4%95%E0%A4%BE%20%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B0%20%28%E0%A4%AF%E0%A4%B6%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20NCERT%20Solutions.pdf__%E0%A4%AA%E0%A4%BE%E0%A4%A0%201%20%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%20%E0%A4%95%E0%A4%BE%20%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B0%20%28%E0%A4%AF%E0%A4%B6%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20NCERT%20Solutions.pdf" class="watch">NCERT Solution</a></div>
+</div>
 
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "#00f0ff88";
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      }
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
-  <script>
-  function startCountdown(hour, minute, countdownId, cardId, joinUrl) {
-    const countdown = document.getElementById(countdownId);
-    const card = document.getElementById(cardId);
-
-    function update() {
-      const now = new Date();
-      let target = new Date();
-      target.setHours(hour, minute, 0, 0);
-
-      // If class time already passed, show "Live Now"
-      if (now >= target) {
-        countdown.textContent = "🔴 Live Now";
-        card.href = joinUrl;
-        card.style.pointerEvents = "auto";
-        card.style.opacity = "1";
-        return;
-      }
-
-      const diff = target - now;
-      const hrs = Math.floor(diff / (1000 * 60 * 60));
-      const mins = Math.floor((diff / (1000 * 60)) % 60);
-      const secs = Math.floor((diff / 1000) % 60);
-      countdown.textContent = `⏳ Starts in: ${hrs}h ${mins}m ${secs}s`;
-    }
-
-    update();
-    setInterval(update, 1000);
-  }
-
-  // Start countdowns
-  startCountdown(17, 0, "sst-countdown", "sst-live", "https://futuretoppersvideoplayer8939.netlify.app/?link=https://dga9kme080o0w.cloudfront.net/out/v1/5c7cfedca3df4fc99ea383b5f2e6a7a8/index.m3u8");
-  startCountdown(20, 0, "maths-countdown", "maths-live", "https://futuretoppersvideoplayer8939.netlify.app/?link=https://dga9kme080o0w.cloudfront.net/out/v1/5c7cfedca3df4fc99ea383b5f2e6a7a8/index.m3u8");
-
-  
+<div class="chapter-card">
+  <h2 class="chapter-title">एवरेस्ट मेरी शिखर यात्रा</h2>
+  <div class="lesson"><span>व्याख्या:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376173/1746737224_8170206828923258/sunny/1746716296561_520832358582066600_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/4331394%E0%A4%AA%E0%A4%BE%E0%A4%A0%202%20%E0%A4%8F%E0%A4%B5%E0%A4%B0%E0%A5%87%E0%A4%B8%E0%A5%8D%E0%A4%9F%20_%20%E0%A4%AE%E0%A5%87%E0%A4%B0%E0%A5%80%20%E0%A4%B6%E0%A4%BF%E0%A4%96%E0%A4%B0%20%E0%A4%AF%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%20%28%E0%A4%AC%E0%A4%9A%E0%A5%87%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A4%BE.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%202%20%E0%A4%8F%E0%A4%B5%E0%A4%B0%E0%A5%87%E0%A4%B8%E0%A5%8D%E0%A4%9F%20_%20%E0%A4%AE%E0%A5%87%E0%A4%B0%E0%A5%80%20%E0%A4%B6%E0%A4%BF%E0%A4%96%E0%A4%B0%20%E0%A4%AF%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%20%28%E0%A4%AC%E0%A4%9A%E0%A5%87%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A4%BE.pdf" class="watch">Access Notes</a></div>
+    <div class="lesson"><span>NCERT Solution:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376172/1746736928_7246616066092919/sunny/1746716190645_451467698255423900_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/5711449%E0%A4%AA%E0%A4%BE%E0%A4%A0%202%20%E0%A4%8F%E0%A4%B5%E0%A4%B0%E0%A5%87%E0%A4%B8%E0%A5%8D%E0%A4%9F%20_%20%E0%A4%AE%E0%A5%87%E0%A4%B0%E0%A5%80%20%E0%A4%B6%E0%A4%BF%E0%A4%96%E0%A4%B0%20%E0%A4%AF%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%20%28%E0%A4%AC%E0%A4%9A%E0%A5%87%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20NCERT%20Solutions.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%202%20%E0%A4%8F%E0%A4%B5%E0%A4%B0%E0%A5%87%E0%A4%B8%E0%A5%8D%E0%A4%9F%20_%20%E0%A4%AE%E0%A5%87%E0%A4%B0%E0%A5%80%20%E0%A4%B6%E0%A4%BF%E0%A4%96%E0%A4%B0%20%E0%A4%AF%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%20%28%E0%A4%AC%E0%A4%9A%E0%A5%87%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20NCERT%20Solutions.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>MCQs:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376171/1746736865_9586660164585563/sunny/1746716102384_431264663935036200_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/2317788%E0%A4%AA%E0%A4%BE%E0%A4%A0%202%20%E0%A4%8F%E0%A4%B5%E0%A4%B0%E0%A5%87%E0%A4%B8%E0%A5%8D%E0%A4%9F%20_%20%E0%A4%AE%E0%A5%87%E0%A4%B0%E0%A5%80%20%E0%A4%B6%E0%A4%BF%E0%A4%96%E0%A4%B0%20%E0%A4%AF%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%20%28%E0%A4%AC%E0%A4%9A%E0%A5%87%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20Multiple%20Choice%20questions.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%202%20%E0%A4%8F%E0%A4%B5%E0%A4%B0%E0%A5%87%E0%A4%B8%E0%A5%8D%E0%A4%9F%20_%20%E0%A4%AE%E0%A5%87%E0%A4%B0%E0%A5%80%20%E0%A4%B6%E0%A4%BF%E0%A4%96%E0%A4%B0%20%E0%A4%AF%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%20%28%E0%A4%AC%E0%A4%9A%E0%A5%87%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20Multiple%20Choice%20questions.pdf" class="watch">Access Notes</a></div>
+<div class="lesson"><span>Revision:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376170/1746731945_5192141045295381/sunny/1746715901439_37622052615082360_video_VOD.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/6015848%E0%A4%AA%E0%A4%BE%E0%A4%A0%202%20%E0%A4%8F%E0%A4%B5%E0%A4%B0%E0%A5%87%E0%A4%B8%E0%A5%8D%E0%A4%9F%20_%20%E0%A4%AE%E0%A5%87%E0%A4%B0%E0%A5%80%20%E0%A4%B6%E0%A4%BF%E0%A4%96%E0%A4%B0%20%E0%A4%AF%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%20%28%E0%A4%AC%E0%A4%9A%E0%A5%87%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20Complete%20chapter%20revision.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%202%20%E0%A4%8F%E0%A4%B5%E0%A4%B0%E0%A5%87%E0%A4%B8%E0%A5%8D%E0%A4%9F%20_%20%E0%A4%AE%E0%A5%87%E0%A4%B0%E0%A5%80%20%E0%A4%B6%E0%A4%BF%E0%A4%96%E0%A4%B0%20%E0%A4%AF%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%20%28%E0%A4%AC%E0%A4%9A%E0%A5%87%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%AA%E0%A4%BE%E0%A4%B2%29%20Complete%20chapter%20revision.pdf" class="watch">Access Notes</a></div>
+</div>
+<div class="chapter-card">
+  <h2 class="chapter-title">तुम कब जाओगे अतिथि</h2>
+  <div class="lesson"><span>व्याख्या:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4410207/1749916446_6473700151096159/sunny/1749914254995_525048537454429000_video_VOD240p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/6291233_%E0%A4%AA%E0%A4%BE%E0%A4%A0%203%20%E0%A4%A4%E0%A5%81%E0%A4%AE%20%E0%A4%95%E0%A4%AC%20%E0%A4%9C%E0%A4%BE%E0%A4%93%E0%A4%97%E0%A5%87%2C%20%E0%A4%85%E0%A4%A4%E0%A4%BF%E0%A4%A5%E0%A4%BF%20%28%E0%A4%B6%E0%A4%B0%E0%A4%A6%20%E0%A4%9C%E0%A5%8B%E0%A4%B6%E0%A5%80%29%20%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A4%BE.pdf__%E0%A4%AA%E0%A4%BE%E0%A4%A0%203%20%E0%A4%A4%E0%A5%81%E0%A4%AE%20%E0%A4%95%E0%A4%AC%20%E0%A4%9C%E0%A4%BE%E0%A4%93%E0%A4%97%E0%A5%87%2C%20%E0%A4%85%E0%A4%A4%E0%A4%BF%E0%A4%A5%E0%A4%BF%20%28%E0%A4%B6%E0%A4%B0%E0%A4%A6%20%E0%A4%9C%E0%A5%8B%E0%A4%B6%E0%A5%80%29%20%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A4%BE.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>NCERT Solution:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4410210/1749917044_8399600522927768/sunny/1749914529743_742052701283870300_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/1841557%E0%A4%AA%E0%A4%BE%E0%A4%A0%203%20%E0%A4%A4%E0%A5%81%E0%A4%AE%20%E0%A4%95%E0%A4%AC%20%E0%A4%9C%E0%A4%BE%E0%A4%93%E0%A4%97%E0%A5%87%2C%20%E0%A4%85%E0%A4%A4%E0%A4%BF%E0%A4%A5%E0%A4%BF%20%28%E0%A4%B6%E0%A4%B0%E0%A4%A6%20%E0%A4%9C%E0%A5%8B%E0%A4%B6%E0%A5%80%29%20NCERT%20Solutions%20.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%203%20%E0%A4%A4%E0%A5%81%E0%A4%AE%20%E0%A4%95%E0%A4%AC%20%E0%A4%9C%E0%A4%BE%E0%A4%93%E0%A4%97%E0%A5%87%2C%20%E0%A4%85%E0%A4%A4%E0%A4%BF%E0%A4%A5%E0%A4%BF%20%28%E0%A4%B6%E0%A4%B0%E0%A4%A6%20%E0%A4%9C%E0%A5%8B%E0%A4%B6%E0%A5%80%29%20NCERT%20Solutions%20.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>MCQs:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4410209/1749916807_3654632768008049/sunny/1749914455005_175749411760681820_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/7168573_%E0%A4%AA%E0%A4%BE%E0%A4%A0%203%20%E0%A4%A4%E0%A5%81%E0%A4%AE%20%E0%A4%95%E0%A4%AC%20%E0%A4%9C%E0%A4%BE%E0%A4%93%E0%A4%97%E0%A5%87%2C%20%E0%A4%85%E0%A4%A4%E0%A4%BF%E0%A4%A5%E0%A4%BF%20%28%E0%A4%B6%E0%A4%B0%E0%A4%A6%20%E0%A4%9C%E0%A5%8B%E0%A4%B6%E0%A5%80%29%20Multiple%20Choice%20questions.pdf__%E0%A4%AA%E0%A4%BE%E0%A4%A0%203%20%E0%A4%A4%E0%A5%81%E0%A4%AE%20%E0%A4%95%E0%A4%AC%20%E0%A4%9C%E0%A4%BE%E0%A4%93%E0%A4%97%E0%A5%87%2C%20%E0%A4%85%E0%A4%A4%E0%A4%BF%E0%A4%A5%E0%A4%BF%20%28%E0%A4%B6%E0%A4%B0%E0%A4%A6%20%E0%A4%9C%E0%A5%8B%E0%A4%B6%E0%A5%80%29%20Multiple%20Choice%20questions.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>Revision:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4410208/1749916624_4139724354398230/sunny/1749914374150_547188533863034100_video_VOD240p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/5462062_%E0%A4%AA%E0%A4%BE%E0%A4%A0%203%20%E0%A4%A4%E0%A5%81%E0%A4%AE%20%E0%A4%95%E0%A4%AC%20%E0%A4%9C%E0%A4%BE%E0%A4%93%E0%A4%97%E0%A5%87%2C%20%E0%A4%85%E0%A4%A4%E0%A4%BF%E0%A4%A5%E0%A4%BF%20%28%E0%A4%B6%E0%A4%B0%E0%A4%A6%20%E0%A4%9C%E0%A5%8B%E0%A4%B6%E0%A5%80%29%20Complete%20chapter%20revision.pdf__%E0%A4%AA%E0%A4%BE%E0%A4%A0%203%20%E0%A4%A4%E0%A5%81%E0%A4%AE%20%E0%A4%95%E0%A4%AC%20%E0%A4%9C%E0%A4%BE%E0%A4%93%E0%A4%97%E0%A5%87%2C%20%E0%A4%85%E0%A4%A4%E0%A4%BF%E0%A4%A5%E0%A4%BF%20%28%E0%A4%B6%E0%A4%B0%E0%A4%A6%20%E0%A4%9C%E0%A5%8B%E0%A4%B6%E0%A5%80%29%20Complete%20chapter%20revision.pdf" class="watch">Access Notes</a></div>
+</div>
+ 
+<div class="chapter-card">
+  <h2 class="chapter-title">गिल्लू</h2>
+  <div class="lesson"><span>व्याख्या:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4425429/1751033525_4470078330612893/sunny/1751019596807_108319882873038860_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/6927770%E0%A4%97%E0%A4%BF%E0%A4%B2%E0%A5%8D%E0%A4%B2%E0%A5%82%20%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A4%BE.pdf_%E0%A4%97%E0%A4%BF%E0%A4%B2%E0%A5%8D%E0%A4%B2%E0%A5%82%20%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A4%BE.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>NCERT Solution:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4425430/1751033886_7367977643649442/sunny/1751019621372_756706376241641600_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/2072197%E0%A4%97%E0%A4%BF%E0%A4%B2%E0%A5%8D%E0%A4%B2%E0%A5%82%20Ncert%20solutions.pdf_%E0%A4%97%E0%A4%BF%E0%A4%B2%E0%A5%8D%E0%A4%B2%E0%A5%82%20Ncert%20solutions.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>MCQs:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4425427/1751033286_6179233091600334/sunny/1751019549183_184850483201025760_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/421425%E0%A4%97%E0%A4%BF%E0%A4%B2%E0%A5%8D%E0%A4%B2%E0%A5%82%20MCQs.pdf_%E0%A4%97%E0%A4%BF%E0%A4%B2%E0%A5%8D%E0%A4%B2%E0%A5%82%20MCQs.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>Revision:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4425428/1751033465_5858389494462766/sunny/1751019566861_303626022391680830_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/3447951%E0%A4%97%E0%A4%BF%E0%A4%B2%E0%A5%8D%E0%A4%B2%E0%A5%82%20CCR.pdf_%E0%A4%97%E0%A4%BF%E0%A4%B2%E0%A5%8D%E0%A4%B2%E0%A5%82%20CCR.pdf" class="watch">Access Notes</a></div>
+</div>
+ 
+<div class="chapter-card">
+  <h2 class="chapter-title">वैज्ञानिक चेतना के वाहक: चंद्रशेखर वेंकट रमन</h2>
+  <div class="lesson"><span>व्याख्या:</span><br><a class='watch' href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4475676/1751883365_7313415582383447/sunny/1751882143535_681404504893227300_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/7163076%E0%A4%AA%E0%A4%BE%E0%A4%A0%204%20%E0%A4%B5%E0%A5%88%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8%E0%A4%BF%E0%A4%95%20%E0%A4%9A%E0%A5%87%E0%A4%A4%E0%A4%A8%E0%A4%BE%20%E0%A4%95%E0%A5%87%20%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%95%20%E0%A4%9A%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%B6%E0%A5%87%E0%A4%96%E0%A4%B0%20%E0%A4%B5%E0%A5%87%E0%A4%82%E0%A4%95%E0%A4%9F%20%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%A8%E0%A5%8D%20%28%20%E0%A4%A7%E0%A5%80%E0%A4%B0%E0%A4%82%E0%A4%9C%E0%A4%A8%20%E0%A4%AE%E0%A4%BE%E0%A4%B2%E0%A4%B5%E0%A5%87%20%29%20%20L1.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%204%20%E0%A4%B5%E0%A5%88%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8%E0%A4%BF%E0%A4%95%20%E0%A4%9A%E0%A5%87%E0%A4%A4%E0%A4%A8%E0%A4%BE%20%E0%A4%95%E0%A5%87%20%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%95%20%E0%A4%9A%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%B6%E0%A5%87%E0%A4%96%E0%A4%B0%20%E0%A4%B5%E0%A5%87%E0%A4%82%E0%A4%95%E0%A4%9F%20%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%A8%E0%A5%8D%20%28%20%E0%A4%A7%E0%A5%80%E0%A4%B0%E0%A4%82%E0%A4%9C%E0%A4%A8%20%E0%A4%AE%E0%A4%BE%E0%A4%B2%E0%A4%B5%E0%A5%87%20%29%20%20L1.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>NCERT Solution:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4475677/1751883368_5282914698466228/sunny/1751883079221_809102413540629900_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/6307453%E0%A4%AA%E0%A4%BE%E0%A4%A0%204%20%E0%A4%B5%E0%A5%88%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8%E0%A4%BF%E0%A4%95%20%E0%A4%9A%E0%A5%87%E0%A4%A4%E0%A4%A8%E0%A4%BE%20%E0%A4%95%E0%A5%87%20%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%95%20%E0%A4%9A%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%B6%E0%A5%87%E0%A4%96%E0%A4%B0%20%E0%A4%B5%E0%A5%87%E0%A4%82%E0%A4%95%E0%A4%9F%20%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%A8%E0%A5%8D%20%28%20%E0%A4%A7%E0%A5%80%E0%A4%B0%E0%A4%82%E0%A4%9C%E0%A4%A8%20%E0%A4%AE%E0%A4%BE%E0%A4%B2%E0%A4%B5%E0%A5%87%20%29%20%20L2.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%204%20%E0%A4%B5%E0%A5%88%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8%E0%A4%BF%E0%A4%95%20%E0%A4%9A%E0%A5%87%E0%A4%A4%E0%A4%A8%E0%A4%BE%20%E0%A4%95%E0%A5%87%20%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%95%20%E0%A4%9A%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%B6%E0%A5%87%E0%A4%96%E0%A4%B0%20%E0%A4%B5%E0%A5%87%E0%A4%82%E0%A4%95%E0%A4%9F%20%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%A8%E0%A5%8D%20%28%20%E0%A4%A7%E0%A5%80%E0%A4%B0%E0%A4%82%E0%A4%9C%E0%A4%A8%20%E0%A4%AE%E0%A4%BE%E0%A4%B2%E0%A4%B5%E0%A5%87%20%29%20%20L2.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>MCQs:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4475684/1751883845_2050912850803803/sunny/1751883753005_237968677955589380_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/7205163%E0%A4%AA%E0%A4%BE%E0%A4%A0%204%20%E0%A4%B5%E0%A5%88%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8%E0%A4%BF%E0%A4%95%20%E0%A4%9A%E0%A5%87%E0%A4%A4%E0%A4%A8%E0%A4%BE%20%E0%A4%95%E0%A5%87%20%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%95%20%E0%A4%9A%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%B6%E0%A5%87%E0%A4%96%E0%A4%B0%20%E0%A4%B5%E0%A5%87%E0%A4%82%E0%A4%95%E0%A4%9F%20%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%A8%E0%A5%8D%20%28%20%E0%A4%A7%E0%A5%80%E0%A4%B0%E0%A4%82%E0%A4%9C%E0%A4%A8%20%E0%A4%AE%E0%A4%BE%E0%A4%B2%E0%A4%B5%E0%A5%87%20%29%20%20L4.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%204%20%E0%A4%B5%E0%A5%88%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8%E0%A4%BF%E0%A4%95%20%E0%A4%9A%E0%A5%87%E0%A4%A4%E0%A4%A8%E0%A4%BE%20%E0%A4%95%E0%A5%87%20%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%95%20%E0%A4%9A%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%B6%E0%A5%87%E0%A4%96%E0%A4%B0%20%E0%A4%B5%E0%A5%87%E0%A4%82%E0%A4%95%E0%A4%9F%20%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%A8%E0%A5%8D%20%28%20%E0%A4%A7%E0%A5%80%E0%A4%B0%E0%A4%82%E0%A4%9C%E0%A4%A8%20%E0%A4%AE%E0%A4%BE%E0%A4%B2%E0%A4%B5%E0%A5%87%20%29%20%20L4.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>Revision:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4475678/1751883606_5792507950901064/sunny/1751883099626_231226812225187940_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/2431506%E0%A4%AA%E0%A4%BE%E0%A4%A0%204%20%E0%A4%B5%E0%A5%88%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8%E0%A4%BF%E0%A4%95%20%E0%A4%9A%E0%A5%87%E0%A4%A4%E0%A4%A8%E0%A4%BE%20%E0%A4%95%E0%A5%87%20%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%95%20%E0%A4%9A%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%B6%E0%A5%87%E0%A4%96%E0%A4%B0%20%E0%A4%B5%E0%A5%87%E0%A4%82%E0%A4%95%E0%A4%9F%20%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%A8%E0%A5%8D%20%28%20%E0%A4%A7%E0%A5%80%E0%A4%B0%E0%A4%82%E0%A4%9C%E0%A4%A8%20%E0%A4%AE%E0%A4%BE%E0%A4%B2%E0%A4%B5%E0%A5%87%20%29%20%20L3.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%204%20%E0%A4%B5%E0%A5%88%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8%E0%A4%BF%E0%A4%95%20%E0%A4%9A%E0%A5%87%E0%A4%A4%E0%A4%A8%E0%A4%BE%20%E0%A4%95%E0%A5%87%20%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%95%20%E0%A4%9A%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%B6%E0%A5%87%E0%A4%96%E0%A4%B0%20%E0%A4%B5%E0%A5%87%E0%A4%82%E0%A4%95%E0%A4%9F%20%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%A8%E0%A5%8D%20%28%20%E0%A4%A7%E0%A5%80%E0%A4%B0%E0%A4%82%E0%A4%9C%E0%A4%A8%20%E0%A4%AE%E0%A4%BE%E0%A4%B2%E0%A4%B5%E0%A5%87%20%29%20%20L3.pdf" class="watch">Access Notes</a></div>
+</div>
+ 
+<div class="chapter-card">
+  <h2 class="chapter-title">प्रेमचंद के फटे जूते</h2>
+  <div class="lesson"><span>व्याख्या:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4475600/1751881385_6432026688525524/sunny/1751880968284_161990567353541120_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/4309893%E0%A4%AA%E0%A4%BE%E0%A4%A0%205%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%20%E0%A4%95%E0%A5%87%20%E0%A4%AB%E0%A4%9F%E0%A5%87%20%E0%A4%9C%E0%A5%82%E0%A4%A4%E0%A5%87%20%28%E0%A4%B9%E0%A4%B0%E0%A4%BF%E0%A4%B6%E0%A4%82%E0%A4%95%E0%A4%B0%20%E0%A4%AA%E0%A4%B0%E0%A4%B8%E0%A4%BE%E0%A4%88%29%20.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%205%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%20%E0%A4%95%E0%A5%87%20%E0%A4%AB%E0%A4%9F%E0%A5%87%20%E0%A4%9C%E0%A5%82%E0%A4%A4%E0%A5%87%20%28%E0%A4%B9%E0%A4%B0%E0%A4%BF%E0%A4%B6%E0%A4%82%E0%A4%95%E0%A4%B0%20%E0%A4%AA%E0%A4%B0%E0%A4%B8%E0%A4%BE%E0%A4%88%29%20.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>NCERT Solution:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4475601/1751881388_1740351658395741/sunny/1751881037711_202939645189069630_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/139449%E0%A4%AA%E0%A4%BE%E0%A4%A0%205%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%20%E0%A4%95%E0%A5%87%20%E0%A4%AB%E0%A4%9F%E0%A5%87%20%E0%A4%9C%E0%A5%82%E0%A4%A4%E0%A5%87%20%28%E0%A4%B9%E0%A4%B0%E0%A4%BF%E0%A4%B6%E0%A4%82%E0%A4%95%E0%A4%B0%20%E0%A4%AA%E0%A4%B0%E0%A4%B8%E0%A4%BE%E0%A4%88%29%20_%20L2.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%205%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%20%E0%A4%95%E0%A5%87%20%E0%A4%AB%E0%A4%9F%E0%A5%87%20%E0%A4%9C%E0%A5%82%E0%A4%A4%E0%A5%87%20%28%E0%A4%B9%E0%A4%B0%E0%A4%BF%E0%A4%B6%E0%A4%82%E0%A4%95%E0%A4%B0%20%E0%A4%AA%E0%A4%B0%E0%A4%B8%E0%A4%BE%E0%A4%88%29%20_%20L2.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>MCQs:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4475602/1751882045_5797818455917674/sunny/1751881090431_764885094765959200_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/4017143%E0%A4%AA%E0%A4%BE%E0%A4%A0%205%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%20%E0%A4%95%E0%A5%87%20%E0%A4%AB%E0%A4%9F%E0%A5%87%20%E0%A4%9C%E0%A5%82%E0%A4%A4%E0%A5%87%20%28%E0%A4%B9%E0%A4%B0%E0%A4%BF%E0%A4%B6%E0%A4%82%E0%A4%95%E0%A4%B0%20%E0%A4%AA%E0%A4%B0%E0%A4%B8%E0%A4%BE%E0%A4%88%29%20_%20L4.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%205%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%20%E0%A4%95%E0%A5%87%20%E0%A4%AB%E0%A4%9F%E0%A5%87%20%E0%A4%9C%E0%A5%82%E0%A4%A4%E0%A5%87%20%28%E0%A4%B9%E0%A4%B0%E0%A4%BF%E0%A4%B6%E0%A4%82%E0%A4%95%E0%A4%B0%20%E0%A4%AA%E0%A4%B0%E0%A4%B8%E0%A4%BE%E0%A4%88%29%20_%20L4.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>Revision:</span><br><a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4475606/1751882106_5941409968265029/sunny/1751881402501_842713970940805400_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/1552415%E0%A4%AA%E0%A4%BE%E0%A4%A0%205%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%20%E0%A4%95%E0%A5%87%20%E0%A4%AB%E0%A4%9F%E0%A5%87%20%E0%A4%9C%E0%A5%82%E0%A4%A4%E0%A5%87%20%28%E0%A4%B9%E0%A4%B0%E0%A4%BF%E0%A4%B6%E0%A4%82%E0%A4%95%E0%A4%B0%20%E0%A4%AA%E0%A4%B0%E0%A4%B8%E0%A4%BE%E0%A4%88%29%20_%20L3.pdf_%E0%A4%AA%E0%A4%BE%E0%A4%A0%205%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%AE%E0%A4%9A%E0%A4%82%E0%A4%A6%20%E0%A4%95%E0%A5%87%20%E0%A4%AB%E0%A4%9F%E0%A5%87%20%E0%A4%9C%E0%A5%82%E0%A4%A4%E0%A5%87%20%28%E0%A4%B9%E0%A4%B0%E0%A4%BF%E0%A4%B6%E0%A4%82%E0%A4%95%E0%A4%B0%20%E0%A4%AA%E0%A4%B0%E0%A4%B8%E0%A4%BE%E0%A4%88%29%20_%20L3.pdf" class="watch">Access Notes</a></div>
+</div>
+    <div class="chapter-card">
+  <h2 class="chapter-title">शुक्रतारे के सामान</h2>
+  <div class="lesson"><span>व्याख्या:</span><br><a class='watch' href='https://live331646.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4483060/1752597905_3852082182304028/sunny/1752591603615_214089385433062430_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/5193315%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L1.pdf_%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L1.pdf"class="watch">Access Notes</a></div>
+  <div class="lesson"><span>NCERT Solution:</span><br><a class='watch' href='https://live331646.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4483059/1752597846_8132733717328630/sunny/1752591560616_83591436448876800_video_VOD360p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/6108766%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L2.pdf_%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L2.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>MCQs:</span><br><a class='watch' href='https://live331646.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4483057/1752597006_6346764770550734/sunny/1752591428632_140539731125972000_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/2437257%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L3.pdf_%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L3.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>Revision:</span><br><a class='watch' href='https://live331646.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4483058/1752597486_9387708529551132/sunny/1752591520534_536861725686827140_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/550102%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L4.pdf_%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L4.pdf" class="watch">Access Notes</a></div>
+    </div>
+    <div class="chapter-card">
+  <h2 class="chapter-title">इस जल प्रलय में</h2>
+  <div class="lesson"><span>व्याख्या:</span><br><a class='watch' href='https://live331646.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4483060/1752597905_3852082182304028/sunny/1752591603615_214089385433062430_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/5193315%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L1.pdf_%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L1.pdf"class="watch">Access Notes</a></div>
+  <div class="lesson"><span>NCERT Solution:</span><br><a class='watch' href='https://live331646.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4483059/1752597846_8132733717328630/sunny/1752591560616_83591436448876800_video_VOD360p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/6108766%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L2.pdf_%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L2.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>MCQs:</span><br><a class='watch' href='https://live331646.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4483057/1752597006_6346764770550734/sunny/1752591428632_140539731125972000_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/2437257%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L3.pdf_%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L3.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>Revision:</span><br><a class='watch' href='https://live331646.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4483058/1752597486_9387708529551132/sunny/1752591520534_536861725686827140_video_VOD720p30.m3u8'>Watch Video</a></div>
+  <div class="lesson"><span></span> <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/550102%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L4.pdf_%E0%A4%B6%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%A8%20%20L4.pdf" class="watch">Access Notes</a></div>
+    </div>
+ 
+</main>
 </body>
 </html>
