@@ -4,28 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Verifying...</title>
+  <style>
+    body {
+      background: #000;
+      color: #0f0;
+      text-align: center;
+      padding-top: 100px;
+      font-family: Arial, sans-serif;
+    }
+    .error { color: red; }
+  </style>
 </head>
-<body style="font-family:sans-serif; text-align:center; padding:50px; background:#000; color:#0f0;">
-  <h2>🔐 Verifying your access...</h2>
+<body>
+  <h2>🔐 Verifying Access</h2>
   <p id="status">Please wait...</p>
 
   <script>
-    const ref = document.referrer;
-    const expected = "https://lksfy.com/p861S";
+    // Check if already verified and not expired
+    const verifiedData = JSON.parse(localStorage.getItem("future toppers"));
+    const now = new Date().getTime();
+    const hours24 = 24 * 60 * 60 * 1000;
 
-    if (ref === expected) {
-      localStorage.setItem("future toppers", "Verified");
-      document.getElementById("status").innerText = "✅ Verified! Redirecting...";
-      setTimeout(() => {
-        window.location.href = "index.html"; // redirect to homepage
-      }, 1500);
-    } else {
-      document.getElementById("status").innerText = "❌ Access Denied. Invalid verification source.";
+    if (verifiedData && now - verifiedData.time < hours24) {
+      window.location.href = "index.html"; // Already verified, redirect
     }
 
-    // Auto-redirect if already verified
-    if (localStorage.getItem("future toppers") === "Verified") {
-      window.location.href = "index.html";
+    // Check if link was accessed via your short link
+    const ref = document.referrer;
+    const validRef = "https://lksfy.com/p861S";
+
+    if (ref === validRef) {
+      // Save timestamped verification
+      localStorage.setItem("future toppers", JSON.stringify({ verified: true, time: now }));
+      document.getElementById("status").innerText = "✅ Verified! Access granted for 24 hours...";
+      setTimeout(() => {
+        window.location.href = "index.html"; // Redirect to homepage
+      }, 1500);
+    } else {
+      document.getElementById("status").innerHTML = "<span class='error'>❌ Access Denied. Use the correct verification link.</span>";
     }
   </script>
 </body>
