@@ -56,42 +56,44 @@
 <body>
 
   <h1>🔐 Verify Access</h1>
-  <p>Click the button below to verify and unlock <strong>Future Toppers</strong> content for 24 hours.</p>
+  <p>Click "Verify Now" to unlock <strong>Future Toppers</strong> for 24 hours.</p>
 
-  <!-- ✅ Button to open short link -->
-  <button onclick="openShortener()">✅ Verify Now</button>
-
-  <!-- ✅ Button to go to main site if already verified -->
-  <button onclick="goToMainSite()">🚀 Go to Future Toppers</button>
+  <button onclick="verifyNow()">✅ Verify Now</button>
+  <button onclick="goToMain()">🚀 Go to Future Toppers</button>
 
   <div id="countdown"></div>
 
   <script>
-    const cookieName = "accessKey";
-    const mainSite = "https://futuretoppersofficial89.netlify.app/";
     const shortURL = "https://lksfy.com/p861S";
-    const maxTime = 30 * 60 * 60 * 1000; // 30 hrs
+    const mainSite = "https://futuretoppersofficial89.netlify.app/";
+    const cookieName = "accessKey";
+    const maxTime = 30 * 60 * 60 * 1000;
 
-    function openShortener() {
-      // This should redirect to your URL shortener
+    function verifyNow() {
+      localStorage.setItem("visitedShortLink", "true");
       window.open(shortURL, "_blank");
     }
 
-    function goToMainSite() {
-      // Set cookie & localStorage
+    function goToMain() {
+      const verified = localStorage.getItem("visitedShortLink");
+      if (!verified) {
+        alert("❌ Please verify first by clicking 'Verify Now'.");
+        return;
+      }
+
       const now = Date.now();
       document.cookie = `${cookieName}=true; path=/; max-age=${maxTime / 1000};`;
       localStorage.setItem("accessStartTime", now);
+      localStorage.removeItem("visitedShortLink"); // one-time use
       window.location.href = mainSite;
     }
 
-    // Show remaining time if already verified
     function showCountdown() {
-      const accessStart = localStorage.getItem("accessStartTime");
-      if (!accessStart) return;
+      const start = localStorage.getItem("accessStartTime");
+      if (!start) return;
 
       function update() {
-        const remaining = maxTime - (Date.now() - parseInt(accessStart));
+        const remaining = maxTime - (Date.now() - parseInt(start));
         const el = document.getElementById("countdown");
 
         if (remaining <= 0) {
