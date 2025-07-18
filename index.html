@@ -5,10 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>🔐 Verify Access | Future Toppers</title>
   <style>
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap');
+
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at center, #0f0c29, #302b63, #24243e);
+      background: #0f0c29;
       color: #fff;
       display: flex;
       flex-direction: column;
@@ -16,44 +23,62 @@
       justify-content: center;
       height: 100vh;
       text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 10px;
+      text-shadow: 0 0 10px #00ffd9;
     }
 
     p {
-      font-size: 1rem;
-      margin-bottom: 20px;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      color: #cfcfcf;
     }
 
     button {
-      background: #00ffd9;
+      background: rgba(0, 255, 217, 0.9);
       border: none;
       color: #000;
       padding: 14px 30px;
       margin: 10px;
       font-size: 1rem;
       font-weight: bold;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
       transition: all 0.3s ease;
+      box-shadow: 0 0 15px #00ffd9;
     }
 
     button:hover {
       background: #0ff;
-      transform: scale(1.05);
+      transform: scale(1.08);
+      box-shadow: 0 0 25px #00ffd9;
     }
 
     #countdown {
       margin-top: 25px;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #0ff;
+      text-shadow: 0 0 5px #0ff;
     }
   </style>
 </head>
 <body>
+
+  <div id="particles-js"></div>
 
   <h1>🔐 Verify Access</h1>
   <p>Click "Verify Now" to unlock <strong>Future Toppers</strong> for 24 hours.</p>
@@ -84,7 +109,7 @@
       const now = Date.now();
       document.cookie = `${cookieName}=true; path=/; max-age=${maxTime / 1000};`;
       localStorage.setItem("accessStartTime", now);
-      localStorage.removeItem("visitedShortLink"); // one-time use
+      localStorage.removeItem("visitedShortLink");
       window.location.href = mainSite;
     }
 
@@ -113,6 +138,46 @@
     }
 
     showCountdown();
+  </script>
+
+  <!-- Add particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 60,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#00ffd9"
+        },
+        "shape": {
+          "type": "circle"
+        },
+        "opacity": {
+          "value": 0.5
+        },
+        "size": {
+          "value": 3
+        },
+        "move": {
+          "enable": true,
+          "speed": 2
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          }
+        }
+      }
+    });
   </script>
 
 </body>
