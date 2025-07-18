@@ -1,48 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Verifying...</title>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Key</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#0a0f1d">
   <style>
-    body {
-      background: #000;
-      color: #0f0;
-      text-align: center;
-      padding-top: 100px;
-      font-family: Arial, sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .error { color: red; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #0a0f1d;
+      overflow: hidden;
+      position: relative;
+      color: #ffffff;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 15px;
+      padding: 30px;
+      width: 400px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 174, 255, 0.3);
+      border: 1px solid rgba(0, 174, 255, 0.2);
+      backdrop-filter: blur(8px);
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #a3f7ff;
+      text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #d4eaff;
+    }
+
+    .button {
+      display: inline-block;
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      color: #ffffff;
+      border: 1px solid #00bcd4;
+      background: transparent;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 8px 0;
+      font-weight: 600;
+      transition: 0.3s;
+      text-transform: uppercase;
+    }
+
+    .button:hover {
+      background: #00bcd4;
+      color: #000;
+      box-shadow: 0 0 12px rgba(0, 188, 212, 0.6);
+    }
+
+    .loading {
+      font-size: 13px;
+      color: #ffcb6b;
+      margin-top: 10px;
+      display: none;
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    @keyframes flicker {
+      from { opacity: 0.6; }
+      to { opacity: 1; }
+    }
+
+    .tiny-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      font-size: 10px;
+      padding: 4px 0;
+      z-index: 1000;
+      letter-spacing: 0.5px;
+    }
+
+    .tiny-footer:hover {
+      box-shadow: 0 0 8px #0ff, 0 0 12px #0ff;
+      color: #0ff;
+    }
   </style>
 </head>
 <body>
-  <h2>🔐 Verifying Access</h2>
-  <p id="status">Please wait...</p>
+  <div id="particles-js"></div>
+  <div class="container">
+    <h2>Generate Your Access Key</h2>
+    <p>Click the button below to generate your key.<br><br>Validity: 30 hours ⏰</p>
+    <button id="server02" class="button">Website Server - 1</button>
+    <button id="server03Url" class="button">Website Server - 2</button> 
+    <button id="recommendServer" class="button">Website Server - 3</button>
+    <button id="watchVideo" class="button">TUTORIAL VIDEO [EASY METHOD]</button>
+    <p>Please do <strong>Watch TUTORIAL Video FIRST</strong>, so that you not face any Problem.</p>
+    <p class="loading" id="loadingMessage">Generating URL, please wait...</p>
+  </div>
 
   <script>
-    // Check if already verified and not expired
-    const verifiedData = JSON.parse(localStorage.getItem("future toppers"));
-    const now = new Date().getTime();
-    const hours24 = 24 * 60 * 60 * 1000;
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 100, density: { enable: true, value_area: 800 } },
+        color: { value: "#00bcd4" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, anim: { enable: true, speed: 1, opacity_min: 0.1 } },
+        size: { value: 2.5, random: true },
+        line_linked: { enable: true, distance: 140, color: "#00bcd4", opacity: 0.3, width: 1 },
+        move: { enable: true, speed: 1.5, out_mode: "out" }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" } },
+        modes: { grab: { distance: 120, line_linked: { opacity: 1 } } }
+      },
+      retina_detect: true
+    });
 
-    if (verifiedData && now - verifiedData.time < hours24) {
-      window.location.href = "index.html"; // Already verified, redirect
-    }
+    const urls = {
+      server02: 'https://lksfy.com/p861S',
+      server03: 'https://lksfy.com/p861S',
+      recommendServer: 'https://lksfy.com/p861S',
+      tutorialVideo: 'https://t.me/EduVerse_Network/2141'
+    };
 
-    // Check if link was accessed via your short link
-    const ref = document.referrer;
-    const validRef = "https://lksfy.com/p861S";
-
-    if (ref === validRef) {
-      // Save timestamped verification
-      localStorage.setItem("future toppers", JSON.stringify({ verified: true, time: now }));
-      document.getElementById("status").innerText = "✅ Verified! Access granted for 24 hours...";
+    function setTemporaryCookieAndRedirect(cookieName, url) {
+      if (!url) return alert('Invalid URL!');
+      document.getElementById("loadingMessage").style.display = "block";
       setTimeout(() => {
-        window.location.href = "index.html"; // Redirect to homepage
-      }, 1500);
-    } else {
-      document.getElementById("status").innerHTML = "<span class='error'>❌ Access Denied. Use the correct verification link.</span>";
+        document.cookie = `${cookieName}=true; path=/; max-age=${30 * 60 * 60}`;
+        window.location.href = url;
+      }, 2000);
     }
+
+    document.getElementById('server02').addEventListener('click', () => setTemporaryCookieAndRedirect('accessKey', urls.server02));
+    document.getElementById('server03Url').addEventListener('click', () => setTemporaryCookieAndRedirect('accessKey', urls.server03));
+    document.getElementById('recommendServer').addEventListener('click', () => setTemporaryCookieAndRedirect('accessKey', urls.recommendServer));
+    document.getElementById('watchVideo').addEventListener('click', () => window.open(urls.tutorialVideo, '_blank'));
   </script>
 </body>
-</html>
+    </html>
