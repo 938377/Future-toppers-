@@ -3,228 +3,229 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Number System - Future Toppers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Class 9 Maths</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    #particles-js {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+    }
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0b0c17, #1e1038, #140912);
       color: #fff;
-      background: #0e0e2c;
-      overflow-x: hidden;
     }
-
     header {
-      text-align: center;
-      padding: 30px 20px 10px;
-      font-size: 2.2em;
-      color: #ffffff;
-      font-weight: 600;
-      text-shadow: 0 0 20px #00ffe1;
-    }
-
-    .chapter-card {
-      max-width: 700px;
-      margin: 30px auto;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      box-shadow: 0 0 15px #00ffe1;
-    }
-
-    .lesson-title {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-      text-align: center;
-      color: #00ffe1;
-    }
-
-    .lesson {
+      background: rgba(0, 102, 204, 0.9);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 12px 18px;
-      margin: 10px 0;
-      border-radius: 12px;
-      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 30px rgba(0, 102, 204, 0.5);
     }
-
-    .lesson span {
-      font-weight: 600;
-      font-size: 1.1em;
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
     }
-
-    .btns a {
-      text-decoration: none;
-      margin-left: 10px;
-      padding: 8px 14px;
-      background: #00ffe1;
-      color: #000;
-      border-radius: 10px;
-      font-weight: 600;
+    .logo-container img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(0, 102, 204, 0.8), 0 0 25px rgba(0, 102, 204, 0.5);
+    }
+    .logo-container h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      animation: float 2.5s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    .chapters {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .chapter-card {
+      background: rgba(15, 10, 30, 0.9);
+      border: 1px solid rgba(0, 102, 204, 0.3);
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
       transition: 0.3s;
     }
-
-    .btns a:hover {
-      background: #ff00ff;
-      color: #fff;
+    .chapter-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 102, 204, 0.5);
     }
-
-    #particles-js {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
+    .chapter-title {
+      font-size: 1.5rem;
+      color: #38bdf8;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .lesson {
+      margin-bottom: 0.75rem;
+    }
+    .lesson span {
+      font-weight: bold;
+    }
+    .lesson a.watch {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: linear-gradient(to right, #06b6d4, #3b82f6);
+      color: white;
+      padding: 0.4rem 0.9rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+    }
+    .lesson a.watch:hover {
+      background: linear-gradient(to right, #3b82f6, #06b6d4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.6);
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="logo-container">
+<img src= "https://media.licdn.com/dms/image/v2/D4D0BAQHsoicvJjmBhA/company-logo_200_200/company-logo_200_200/0/1734597691585/next_toppers_logo?e=2147483647&v=beta&t=v8BGc1q8mtS_xcFTpqz4vOWSuqvuczx9cEH7WueZ1Zw" alt="Maths">
 
-<div id="particles-js"></div>
+      <h1>Class 9 Maths</h1>
+    </div>
+  </header>
 
-<header>📘 Class 9 - Maths</header>
-
+  <main class="chapters">
+<!-- Number System -->
 <div class="chapter-card">
-  <div class="lesson-title">Number System</div>
-
-  <!-- Repeat for L1 to L7 -->
-  <div class="lesson">
-    <span>Lecture 1</span>
-    <div class="btns">
-      <a href="https://youtu.be/F6v_8tOEYrc">Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/630773142527132200.pdf">Notes</a>
-    </div>
+  <h2 class="chapter-title">Number System</h2>
+  <div class="lesson"><span>L1:</span><a href="https://youtu.be/F6v_8tOEYrc" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L1:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/630773142527132200.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L2:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4360152/174550928629871097666/174550928629871097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L2:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/289476255780218430.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L3:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4361156/174558576440391097666/174558576440391097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L3:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/146415667329121730.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L4:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4362008/174567183539581097666/174567183539581097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L4:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/366564110685032770.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L5:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4367149/174611361544421097666/174611361544421097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L5:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/434141207850167900.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L6:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4368222/174619110643541097666/174619110643541097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L6:</span><a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/989861Number%20System%20L6.pdf_Number%20System%20L6.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L7:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4370049/174627933537761097666/174627933537761097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L7:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/566549363460292200.pdf" class="watch">Access Notes</a></div>
+</div><!-- Polynomials -->
+<div class="chapter-card">
+  <h2 class="chapter-title">Polynomials</h2>
+  <div class="lesson"><span>L1:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4376184/174671865862761097666/174671865862761097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L1:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/74399702929336430.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L2:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4377207/174679563175571097666/174679563175571097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L2:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/502554344526904960.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L3:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4377938/174688306660241097666/174688306660241097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L3:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/705180113669637000.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L4:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4383998/174739970880251097666/174739970880251097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L4:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/573948259537011260.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L5:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4384765/174748733028261097666/174748733028261097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L5:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/235407454948249120.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L6:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4384986/174757357814051097666/174757357814051097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L6:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/392776860527611100.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L7:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4389346/174793035190161097666/174793035190161097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L7:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/790702335187412500.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L8:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4390842/174800460375161097666/174800460375161097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L8:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/719024689970129900.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L9:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4391472/174809232290121097666/174809232290121097666_1097666.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L9:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/781709921566277400.pdf" class="watch">Access Notes</a></div>
   </div>
 
-  <div class="lesson">
-    <span>Lecture 2</span>
-    <div class="btns">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4360152/174550928629871097666/174550928629871097666_1097666.m3u8">Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/289476255780218430.pdf">Notes</a>
-    </div>
-  </div>
-
-  <div class="lesson">
-    <span>Lecture 3</span>
-    <div class="btns">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4361156/174558576440391097666/174558576440391097666_1097666.m3u8">Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/146415667329121730.pdf">Notes</a>
-    </div>
-  </div>
-
-  <div class="lesson">
-    <span>Lecture 4</span>
-    <div class="btns">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4362008/174567183539581097666/174567183539581097666_1097666.m3u8">Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/366564110685032770.pdf">Notes</a>
-    </div>
-  </div>
-
-  <div class="lesson">
-    <span>Lecture 5</span>
-    <div class="btns">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4367149/174611361544421097666/174611361544421097666_1097666.m3u8">Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/434141207850167900.pdf">Notes</a>
-    </div>
-  </div>
-
-  <div class="lesson">
-    <span>Lecture 6</span>
-    <div class="btns">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4368222/174619110643541097666/174619110643541097666_1097666.m3u8">Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/989861Number%20System%20L6.pdf_Number%20System%20L6.pdf">Notes</a>
-    </div>
-  </div>
-
-  <div class="lesson">
-    <span>Lecture 7</span>
-    <div class="btns">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4370049/174627933537761097666/174627933537761097666_1097666.m3u8">Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/566549363460292200.pdf">Notes</a>
-    </div>
- <section class="chapter">
-  <h2 class="chapter-title">📘 Polynomials</h2>
-  <div class="lessons">
-    <div class="lesson-row">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4376184/174671865862761097666/174671865862761097666_1097666.m3u8" class="btn">L1 Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/74399702929336430.pdf" class="btn">L1 Notes</a>
-    </div>
-    <div class="lesson-row">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4377207/174679563175571097666/174679563175571097666_1097666.m3u8" class="btn">L2 Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/502554344526904960.pdf" class="btn">L2 Notes</a>
-    </div>
-    <div class="lesson-row">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4377938/174688306660241097666/174688306660241097666_1097666.m3u8" class="btn">L3 Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/705180113669637000.pdf" class="btn">L3 Notes</a>
-    </div>
-    <div class="lesson-row">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4383998/174739970880251097666/174739970880251097666_1097666.m3u8" class="btn">L4 Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/573948259537011260.pdf" class="btn">L4 Notes</a>
-    </div>
-    <div class="lesson-row">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4384765/174748733028261097666/174748733028261097666_1097666.m3u8" class="btn">L5 Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/235407454948249120.pdf" class="btn">L5 Notes</a>
-    </div>
-    <div class="lesson-row">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4384986/174757357814051097666/174757357814051097666_1097666.m3u8" class="btn">L6 Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/392776860527611100.pdf" class="btn">L6 Notes</a>
-    </div>
-    <div class="lesson-row">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4389346/174793035190161097666/174793035190161097666_1097666.m3u8" class="btn">L7 Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/790702335187412500.pdf" class="btn">L7 Notes</a>
-    </div>
-    <div class="lesson-row">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4390842/174800460375161097666/174800460375161097666_1097666.m3u8" class="btn">L8 Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/719024689970129900.pdf" class="btn">L8 Notes</a>
-    </div>
-    <div class="lesson-row">
-      <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4391472/174809232290121097666/174809232290121097666_1097666.m3u8" class="btn">L9 Video</a>
-      <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/781709921566277400.pdf" class="btn">L9 Notes</a>
-    </div>
-  </div>
-</section> </div>
-
+<!-- Coordinate Geometry -->
+    <div class="chapter-card">
+      <h2 class="chapter-title">Coordinate Geometry</h2>
+      <div class="lesson"><span>L1:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4396260/174853287832481261798/index_1.m3u8" class="watch">Watch Video</a></div>
+      <div class="lesson"><span>L1:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/34085646867409710.pdf" class="watch">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4397075/174860816936171261798/index_1.m3u8" class="watch">Watch Video</a></div>
+      <div class="lesson"><span>L2:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/520128588958833200.pdf" class="watch">Access Notes</a></div>
+      <div class="lesson"><span>L3:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4397715/174869387171741261798/174869387171741261798_1261798.m3u8" class="watch">Watch Video</a></div>
+      <div class="lesson"><span>L3:</span><a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/217701739676724700.pdf" class="watch">Access Notes</a></div>
 </div>
 
-<!-- Particle Script -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
+<!-- Linear Equations in Two Variables -->
+<div class="chapter-card">
+  <h2 class="chapter-title">Linear Equations in Two Variables</h2>
+  <div class="lesson"><span>L1:</span> <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4408426/174974223257041261798/index_4.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L1:</span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/28876332252753430.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L2:</span> <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4409327/174981810598981261798/index_2.m3u8" class="watch" target="_blank">Watch Video</a></div>
+  <div class="lesson"><span>L2:</span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/898296706271436700.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L3:</span> <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4410122/174990428067631261798/index_1.m3u8" class="watch" target="_blank">Watch Video</a></div>
+  <div class="lesson"><span>L3:</span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/647579420880400400.pdf" class="watch">Access Notes</a></div>
+</div>
+
+<!-- Lines and Angles -->
+<div class="chapter-card">
+  <h2 class="chapter-title">Lines and Angles</h2>
+  <div class="lesson"><span>L1:</span> <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d274dp7v20n4nf.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4414993/175034844671898752407/index_4.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L1:</span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/741120386417670400.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L2:</span> <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d274dp7v20n4nf.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4415948/175042402315178752407/index_4.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L2:</span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/178753601582443740.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L3:</span> <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d274dp7v20n4nf.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4416586/175051018944158752407/index_4.m3u8" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L3:</span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/588945404340775200.pdf" class="watch">Access Notes</a></div>
+<div
+class="lesson"><span>L4:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d274dp7v20n4nf.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4426270/175102838146088752407/index_2.m3u8" class="watch">Watch Video</a> </div>
+<div
+class="lesson"><span>L4:</span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/768594604116359600.pdf"
+class="watch">Access Notes </a></div>
+<div
+class="lesson"><span>L5:</span><a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d274dp7v20n4nf.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4427364/175111482017818752407/index_4.m3u8" class="watch">Watch Video</a> </div>
+<div
+class="lesson"><span>L5:</span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/892325459170753300.pdf"
+class="watch">Access Notes </a></div>
+    <div class="lesson"><span>L6:</span> <a class='watch' href='https://youtu.be/gnSMtXl5c3k?si=hqxuQKkugNgcQfuN'>Watch Video</a></div>
+   
+  <div class="lesson"><span>L6:</span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/310836165950808000.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L7:</span> <a class='watch' href='https://youtu.be/4NGrfjVY-sw?si=_4rwxjv6igfdXY9O'>Watch Video</a></div>
+  <div class="lesson"><span>L7:</span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/648745054789896700.pdf" class="watch">Access Notes</a></div>
+  <div class="lesson"><span>L8:</span> <a class='watch' href='https://youtu.be/iKQ4W6R-jXg?si=vSASkdwYiPt6KiUF'>Watch Video</a></div>
+  <div class="lesson"><span>L8:</span> <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/375537386908395840.pdf" class="watch">Access Notes</a></div>
+</div>
+  </div>
+    <!-- TRIANGLES -->
+<div class="chapter-card">
+  <h2 class="chapter-title">TRIANGLES</h2>
+<div class="lesson"><span>L1:</span> <a href="https://youtu.be/ka5mbCQzBiw?si=8wH2xLFaYaBpY46n" class="watch">Watch Video</a></div>
+  <div class="lesson"><span>L1:</span> <a href="" class="watch">Access Notes</a></div>
+
+
+
+
+  </div>
+
+
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<div id="particles-js"></div>
+  <script>
 particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 60
-    },
-    "color": {
-      "value": "#00ffe1"
-    },
-    "shape": {
-      "type": "circle"
-    },
-    "opacity": {
-      "value": 0.6
-    },
-    "size": {
-      "value": 3
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#00ffe1",
-      "opacity": 0.3,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 3
-    }
+  particles: {
+    number: { value: 60, density: { enable: true, value_area: 800 } },
+    color: { value: "#38bdf8" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: { enable: true, speed: 1.5 }
   }
 });
-</script>
-
+  </script>
 </body>
-</html>
-
+    </html>
+    
