@@ -1,315 +1,247 @@
-<!-- Paste this full updated HTML in your index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Future Toppers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>FUTURE TOPPERS- Class 9 English</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    a.live-card {
-  text-decoration: none;
-  color: inherit;
+    #particles-js {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
     }
-    #liveSection {
-  max-width: 1100px;
-  margin: 1rem auto 2rem;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-#liveSection h2 {
-  font-size: 1.6rem;
-  color: #ff4a4a;
-  text-shadow: 0 0 8px #ff4a4a88;
-  margin-bottom: 1.5rem;
-}
-
-.live-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-.live-card {
-  background: rgba(255, 74, 74, 0.12);
-  border-left: 4px solid #ff4a4a;
-  border-radius: 18px;
-  padding: 1.5rem;
-  color: white;
-  box-shadow: 0 0 12px #ff4a4a55;
-  transition: transform 0.3s ease;
-  backdrop-filter: blur(12px);
-}
-
-.live-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 22px #ff4a4acc;
-}
-
-.live-card span {
-  font-size: 2.2rem;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-
-.live-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.live-card p {
-  font-size: 0.95rem;
-  color: #ddd;
-}
-  #noticeSection {
-  max-width: 800px;
-  margin: 1rem auto 2rem;
-  background: rgba(0, 240, 255, 0.1);
-  padding: 1.5rem 2rem;
-  border-left: 4px solid #00f0ff;
-  border-radius: 16px;
-  box-shadow: 0 0 12px #00f0ff44;
-  backdrop-filter: blur(10px);
-  color: white;
-}
-
-#noticeSection h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #00f0ff;
-  text-shadow: 0 0 8px #00f0ff88;
-}
-
-#noticeSection ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#noticeSection li {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #0f0f1a;
-      overflow-x: hidden;
-      color: white;
+      background: linear-gradient(135deg, #0b0c17, #1e1038, #140912);
+      color: #fff;
     }
-
-    canvas#bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      z-index: -1;
-    }
-
     header {
-      text-align: center;
-      padding: 2rem 1rem 1rem;
+      background: rgba(0, 102, 204, 0.9);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 30px rgba(0, 102, 204, 0.5);
     }
-
-    header h1 {
-      font-size: 2.2rem;
-      color: #00f0ff;
-      text-shadow: 0 0 15px #00f0ff55;
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
     }
-
-    #searchInput {
-      margin-top: 1rem;
-      padding: 0.6rem 1rem;
-      font-size: 1rem;
-      border-radius: 12px;
-      border: none;
-      background: rgba(255,255,255,0.1);
-      color: white;
-      outline: none;
-      box-shadow: 0 0 12px #00f0ff33;
+    .logo-container img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(0, 102, 204, 0.8), 0 0 25px rgba(0, 102, 204, 0.5);
     }
-
-    .grid {
-      max-width: 1100px;
-      margin: 2rem auto;
+    .logo-container h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      animation: float 2.5s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    .chapters {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem 1rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      padding: 0 1rem 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
     }
-
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 20px;
-      padding: 2rem;
+    .chapter-card {
+      background: rgba(15, 10, 30, 0.9);
+      border: 1px solid rgba(0, 102, 204, 0.3);
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+      transition: 0.3s;
+    }
+    .chapter-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 102, 204, 0.5);
+    }
+    .chapter-title {
+      font-size: 1.5rem;
+      color: #38bdf8;
+      margin-bottom: 1rem;
       text-align: center;
-      backdrop-filter: blur(14px);
+    }
+    .lesson {
+      margin-bottom: 0.75rem;
+    }
+    .lesson span {
+      font-weight: bold;
+    }
+    .lesson a.watch {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: linear-gradient(to right, #06b6d4, #3b82f6);
       color: white;
-      font-weight: 600;
+      padding: 0.4rem 0.9rem;
+      border-radius: 8px;
       text-decoration: none;
-      box-shadow: 0 0 15px rgba(0,255,255,0.1);
-      transition: all 0.4s ease;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
     }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #00f0ffcc;
-    }
-
-    .card span {
-      display: block;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #aaa;
+    .lesson a.watch:hover {
+      background: linear-gradient(to right, #3b82f6, #06b6d4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.6);
     }
   </style>
 </head>
 <body>
-
-  <!-- Glowing background -->
-  <canvas id="bg"></canvas>
-
   <header>
-    <h1>📚 Future Toppers</h1>
-    <input type="text" id="searchInput" placeholder="Search subject...">
-<section id="noticeSection">
-  <h2>📢 Notice</h2>
-  <ul>
-    <li><strong>Today's Lecture:</strong></li>
-    
-
-    <li>➗ MATHS – 5 PM </li>
-  </ul>
-</section>
-<section id="liveSection">
-  <h2>🔴 Live Classes</h2>
-  <div class="live-grid">
-<a class="live-card" id="sst-live" href="https://live331646.netlify.app/?link=https://d274dp7v20n4nf.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4484954/175275601327827125088/175275601327827125088_7125088.m3u8" target="_blank" style="pointer-events: none; opacity: 0.6;">
-  <span>➗</span>
-  <h3>Maths 5pm</h3>
-  <p id="sst-countdown">⏳ Countdown loading...</p>
-</a>
-
-<a class="live-card" id="maths-live" href="#" target="_blank" style="pointer-events: none; opacity: 0.6;">
-  <span></span>
-  <h3>NO CLASS</h3>
-  <p id="maths-countdown">⏳ Countdown loading...</p>
-</a>
-  </div>
-</section>
+    <div class="logo-container">
+ <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHsoicvJjmBhA/company-logo_200_200/company-logo_200_200/0/1734597691585/next_toppers_logo?e=2147483647&v=beta&t=v8BGc1q8mtS_xcFTpqz4vOWSuqvuczx9cEH7WueZ1Zw" alt="Maths">
 
 
+      <h1>Class 9 English- Future toppers</h1>
+    </div>
   </header>
-
-  <div class="grid" id="subjectGrid">
-    <a class="card" href="https://mathsfuturetoppers89.netlify.app/"><span>➗</span>Maths</a>
-    <a class="card" href="https://futuretoppersscience.netlify.app/"><span>🧪</span>Science</a>
-    <a class="card" href="https://futuretopperssst89.netlify.app/"><span>🌍</span>SST</a>
-    <a class="card" href="https://futuretoppershindi.netlify.app/"><span>📝</span>Hindi</a>
-    <a class="card" href="https://futuretoppersenglish89.netlify.app/"><span>📘</span>English</a>
-    <a class="card" href="https://futureyopperssanskrit.netlify.app/"><span>📜</span>Sanskrit</a>
-    <a class="card" href="https://aiitfuturetoppers89.netlify.app/"><span>💻</span>AI / IT</a>
-    <a class="card" href="https://futuretoppersdppvault89.netlify.app/"><span>🔐</span>DPP Vault</a>
-  </div>
-
-  <footer>
-    Made with 💙 by Future Toppers
-  </footer>
-
+  <section class="chapters">
+    <div class="chapter-card">
+      <h2 class="chapter-title">Poetic Devices</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4355434/1745094064_6558196120167470/sunny/1745074746600_243414202639413570_video_VOD.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/276001057449717760.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4355436/1745094844_9240190758365079/sunny/1745075412050_483337412598451650_video_VOD.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/498967843075806340.pdf">Access Notes</a></div>
+</div>
+    <div class="chapter-card">
+      <h2 class="chapter-title">Tenses</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376992/1746790926_2620131171601548/sunny/1746785842321_68968204127858800_video_VOD.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376993/1746791165_4683530659641818/sunny/1746786281807_635426128592612900_video_VOD.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L3:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376994/1746791225_3697514107018118/sunny/1746786504709_85453328252238460_video_VOD.m3u8'>Watch</a></div>
+      <div class="lesson"><span>Notes:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/498967843075806340.pdf">Access Notes</a></div>
+</div>
+    <div class="chapter-card">
+      <h2 class="chapter-title">Determiners</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4396723/1748599866_2612688982288432/sunny/1748596322264_841185111044298900_video_VOD.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/3367679Determiners%20L1.pdf_Determiners%20L1.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4396724/1748599983_8916038134337860/sunny/1748596644025_182722180318143000_video_VOD.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/3617970Determiners%20L2.pdf_Determiners%20L2.pdf">Access Notes</a></div>
+</div>
+    <div class="chapter-card">
+      <h2 class="chapter-title">How I Taught My Grandmother To Read</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4362886/1745829725_3606543055599913/sunny/1745824743259_308192902312425600_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/7174649how%20i%20taught%20my%20grandmother%20%20L1.pdf_how%20i%20taught%20my%20grandmother%20%20L1.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4362887/1745830144_9655694631554495/sunny/1745825310012_498641345465675400_video_VOD360p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/6542084how%20i%20taught%20my%20grandmother%20%20L2.pdf_how%20i%20taught%20my%20grandmother%20%20L2.pdf">Access Notes</a></div>
+</div>
+    <div class="chapter-card">
+      <h2 class="chapter-title">The Fun They Had</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4362885/1745829485_2048536674804334/sunny/1745824193994_820484776522091000_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/5115291fun%20they%20had%20L1.pdf_fun%20they%20had%20L1.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4362888/1745829005_4828557523576252/sunny/1745825520195_860858436100445400_video_VOD240p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/6861657fun%20they%20had%20%20L2.pdf_fun%20they%20had%20%20L2.pdf">Access Notes</a></div>
+</div>
+    <div class="chapter-card">
+      <h2 class="chapter-title">The Road Not Taken</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376945/1746790146_9952541808084121/sunny/1746785890101_885502576654220900_video_VOD720p30.m3u8">Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/3975724The%20Road%20Not%20Taken%20L1.pdf_The%20Road%20Not%20Taken%20L1.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376944/1746789785_1046241985025655/sunny/1746785657092_863095031696032600_video_VOD360p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/722803The%20Road%20Not%20Taken%20L2.pdf_The%20Road%20Not%20Taken%20L2.pdf">Access Notes</a></div>
+</div>
+    <div class="chapter-card">
+      <h2 class="chapter-title">The Brook</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376879/1746787444_6308807111409850/sunny/1746784412048_353490897491965700_video_VOD240p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/1581492The%20Brook%20L1.pdf_The%20Brook%20L1.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376880/1746787626_3472742865214199/sunny/1746784668809_97286300912956000_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/2483928The%20Brook%20L2.pdf_The%20Brook%20L2.pdf">Access Notes</a></div>
+</div>
+    <div class="chapter-card">
+      <h2 class="chapter-title">The Lost Child</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376942/1746789365_8519999002932256/sunny/1746784978966_22068690813281_video_VOD360p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/557239703659281660.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4376943/1746789425_1181554534695089/sunny/1746785432591_190200542431737380_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/251319545529058880.pdf">Access Notes</a></div>
+    </div>
+    <div class="chapter-card">
+      <h2 class="chapter-title">Notice Writing</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4396725/1748600344_7105424734299778/sunny/1748596705339_695291243739292900_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/5141634Notice%20L1.pdf_Notice%20L1.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4396726/1748601005_7265705983287167/sunny/1748596963474_310013224122473150_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/6445473Notice%20L2.pdf_Notice%20L2.pdf">Access Notes</a></div>
+</div>
+    <div class="chapter-card">
+      <h2 class="chapter-title">The Sound Of Music Part 1</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4409060/1749824044_3361889869046858/sunny/1749811523668_756560226864072100_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/7497880sound%20of%20music%20part%201%20L1.pdf_sound%20of%20music%20part%201%20L1.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4409061/1749824105_2359363804227323/sunny/1749812109420_686057178732817300_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/6803599sound%20of%20music%20part%201%20L2.pdf_sound%20of%20music%20part%201%20L2.pdf">Access Notes</a></div>
+</div>
+<div class="chapter-card">
+      <h2 class="chapter-title">The Sound Of Music Part 2</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4415974/1750449905_7686784792214587/sunny/1750424933955_84986932078565730_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/1936922Sound%20of%20Music%20Part%202%20L1.pdf_Sound%20of%20Music%20Part%202%20L1.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4415975/1750450385_4811330079792111/sunny/1750425472276_868704596787497100_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/1830672Sound%20of%20Music%20Part%202%20L2.pdf_Sound%20of%20Music%20Part%202%20L2.pdf">Access Notes</a></div>
+</div>
+<div class="chapter-card">
+      <h2 class="chapter-title">A Dog Named Duke</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4416555/1750533009_8542871833461639/sunny/1750506381530_48685519572953160_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/3367659A%20Dog%20Named%20Duke%20L1.pdf_A%20Dog%20Named%20Duke%20L1.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4416556/1750533013_9534092132612707/sunny/1750506950911_547368833416824770_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/4497159A%20Dog%20Named%20Duke%20L2.pdf_A%20Dog%20Named%20Duke%20L2.pdf">Access Notes</a></div>
+</div>
+<div class="chapter-card">
+      <h2 class="chapter-title">Reading Comprehension</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4422389/1751029686_7543616001739750/sunny/1751016524065_126744750295305970_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/2882528Reading%20comprehension%20L1.pdf_Reading%20comprehension%20L1.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4422390/1751030286_3536065641488478/sunny/1751016595226_572834859645977700_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/2945435Reading%20comprehension%20L2.pdf_Reading%20comprehension%20L2.pdf">Access Notes</a></div>
+</div>
+<div class="chapter-card">
+      <h2 class="chapter-title">The Adventures of Toto</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4465234/1751625546_7220802615425796/sunn/1751624104066_871573264351351600_video_VOD480p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/3826260The%20Adventures%20of%20Toto%20L1.pdf_The%20Adventures%20of%20Toto%20L1.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4465234/1751625546_7220802615425796/sunn/1751624104066_871573264351351600_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/2750854The%20Adventures%20of%20Toto%20L2.pdf_The%20Adventures%20of%20Toto%20L2.pdf">Access Notes</a></div>
+</div>
+<div class="chapter-card">
+      <h2 class="chapter-title">The Man Who Knew Too Much</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4465893/1751722565_1726360179136239/sunny/1751711594694_489175813068023900_video_VOD360p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/2933566The%20Man%20Who%20Knew%20too%20Much%20L1.pdf_The%20Man%20Who%20Knew%20too%20Much%20L1.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4465894/1751723225_6559642526282247/sunny/1751711730431_329012700603989760_video_VOD360p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/5798233The%20Man%20Who%20Knew%20too%20Much%20L2.pdf_The%20Man%20Who%20Knew%20too%20Much%20L2.pdf">Access Notes</a></div>
+</div>
+<div class="chapter-card">
+      <h2 class="chapter-title">The Solitary Reaper (Poetry)</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4479533/1752223266_7172998108124805/sunny/1752215048800_584867000575706000_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/6026185The%20Solitary%20Reaper%20%28poetry%29%20L1.pdf_The%20Solitary%20Reaper%20%28poetry%29%20L1.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4479534/1752223325_4991841560484462/sunny/1752215139094_448078995257972400_video_VOD720p30.m3u8'>Watch</a></div>
+  <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/4680566The%20Solitary%20Reaper%20%28poetry%29%20L2.pdf_The%20Solitary%20Reaper%20%28poetry%29%20L2.pdf">Access Notes</a></div>
+</div>
+<div class="chapter-card">
+      <h2 class="chapter-title">Wind</h2>
+      <div class="lesson"><span>L1:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4479540/1752223565_5601503020926684/sunny/1752215205565_474713474318265500_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L1:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/6982817Wind%20L1.pdf_Wind%20L1.pdf">Access Notes</a></div>
+      <div class="lesson"><span>L2:</span> <a class='watch' href='https://futuretoppersvideoplayer8939.netlify.app/?link=https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/vod_non_drm_ios/4479541/1752223926_4820612734718728/sunny/1752215288107_288965548979669200_video_VOD720p30.m3u8'>Watch</a></div>
+      <div class="lesson"><span>L2:</span> <a class="watch" href="https://dxixtlyravvxx.cloudfront.net/540/admin_v1/file_manager/pdf/1930706Wind%20L2.pdf_Wind%20L2.pdf">Access Notes</a></div>
+</div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<div id="particles-js"></div>
   <script>
-    const input = document.getElementById('searchInput');
-    const cards = document.querySelectorAll('.card');
-    input.addEventListener('input', () => {
-      const val = input.value.toLowerCase();
-      cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(val) ? 'block' : 'none';
-      });
-    });
-  </script>
-
-  <!-- Particle background animation -->
-  <script>
-    const canvas = document.getElementById("bg");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let particles = [];
-    for (let i = 0; i < 100; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 1,
-        dx: (Math.random() - 0.5) * 0.8,
-        dy: (Math.random() - 0.5) * 0.8
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "#00f0ff88";
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      }
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
-  <script>
-  function startCountdown(hour, minute, countdownId, cardId, joinUrl) {
-    const countdown = document.getElementById(countdownId);
-    const card = document.getElementById(cardId);
-
-    function update() {
-      const now = new Date();
-      let target = new Date();
-      target.setHours(hour, minute, 0, 0);
-
-      // If class time already passed, show "Live Now"
-      if (now >= target) {
-        countdown.textContent = "🔴 Live Now";
-        card.href = joinUrl;
-        card.style.pointerEvents = "auto";
-        card.style.opacity = "1";
-        return;
-      }
-
-      const diff = target - now;
-      const hrs = Math.floor(diff / (1000 * 60 * 60));
-      const mins = Math.floor((diff / (1000 * 60)) % 60);
-      const secs = Math.floor((diff / 1000) % 60);
-      countdown.textContent = `⏳ Starts in: ${hrs}h ${mins}m ${secs}s`;
-    }
-
-    update();
-    setInterval(update, 1000);
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60, density: { enable: true, value_area: 800 } },
+    color: { value: "#38bdf8" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: { enable: true, speed: 1.5 }
   }
-
-  // Start countdowns
-  startCountdown(17, 0, "sst-countdown", "sst-live", "");
-  startCountdown(20, 0, "maths-countdown", "maths-live", "https://live331646.netlify.app/?link=MATHS_LIVE_M3U8_LINK");
-
-  </script>
-
+});
+</script>
 </body>
 </html>
