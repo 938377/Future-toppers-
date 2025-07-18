@@ -6,22 +6,13 @@
   <title>StudyVerse - Class 9 AI & IT </title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body::before {
-  content: "";
+   #particles-js {
   position: fixed;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   z-index: -1;
-  background: radial-gradient(circle, rgba(59,130,246,0.2) 1px, transparent 1px);
-  background-size: 30px 30px;
-  animation: moveParticles 20s linear infinite;
-  opacity: 0.3;
-}
-
-@keyframes moveParticles {
-  0% { background-position: 0 0; }
-  100% { background-position: 100px 100px; }
-}
+   }
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -231,6 +222,20 @@
     </div>
 
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<div id="particles-js"></div>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60, density: { enable: true, value_area: 800 } },
+    color: { value: "#38bdf8" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: { enable: true, speed: 1.5 }
+  }
+});
+  </script>
 </body>
   </html>
 
