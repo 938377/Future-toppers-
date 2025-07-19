@@ -1,4 +1,3 @@
-<!-- Paste this full updated HTML in your index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,89 +6,6 @@
   <title>Future Toppers</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    a.live-card {
-  text-decoration: none;
-  color: inherit;
-    }
-    #liveSection {
-  max-width: 1100px;
-  margin: 1rem auto 2rem;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-#liveSection h2 {
-  font-size: 1.6rem;
-  color: #ff4a4a;
-  text-shadow: 0 0 8px #ff4a4a88;
-  margin-bottom: 1.5rem;
-}
-
-.live-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-.live-card {
-  background: rgba(255, 74, 74, 0.12);
-  border-left: 4px solid #ff4a4a;
-  border-radius: 18px;
-  padding: 1.5rem;
-  color: white;
-  box-shadow: 0 0 12px #ff4a4a55;
-  transition: transform 0.3s ease;
-  backdrop-filter: blur(12px);
-}
-
-.live-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 22px #ff4a4acc;
-}
-
-.live-card span {
-  font-size: 2.2rem;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-
-.live-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.live-card p {
-  font-size: 0.95rem;
-  color: #ddd;
-}
-  #noticeSection {
-  max-width: 800px;
-  margin: 1rem auto 2rem;
-  background: rgba(0, 240, 255, 0.1);
-  padding: 1.5rem 2rem;
-  border-left: 4px solid #00f0ff;
-  border-radius: 16px;
-  box-shadow: 0 0 12px #00f0ff44;
-  backdrop-filter: blur(10px);
-  color: white;
-}
-
-#noticeSection h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #00f0ff;
-  text-shadow: 0 0 8px #00f0ff88;
-}
-
-#noticeSection ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#noticeSection li {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -127,6 +43,94 @@
       color: white;
       outline: none;
       box-shadow: 0 0 12px #00f0ff33;
+    }
+
+    #noticeSection {
+      max-width: 800px;
+      margin: 1rem auto 2rem;
+      background: rgba(0, 240, 255, 0.1);
+      padding: 1.5rem 2rem;
+      border-left: 4px solid #00f0ff;
+      border-radius: 16px;
+      box-shadow: 0 0 12px #00f0ff44;
+      backdrop-filter: blur(10px);
+      color: white;
+    }
+
+    #noticeSection h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #00f0ff;
+      text-shadow: 0 0 8px #00f0ff88;
+    }
+
+    #noticeSection ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    #noticeSection li {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #liveSection {
+      max-width: 1100px;
+      margin: 1rem auto 2rem;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    #liveSection h2 {
+      font-size: 1.6rem;
+      color: #ff4a4a;
+      text-shadow: 0 0 8px #ff4a4a88;
+      margin-bottom: 1.5rem;
+    }
+
+    .live-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    a.live-card {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .live-card {
+      background: rgba(255, 74, 74, 0.12);
+      border-left: 4px solid #ff4a4a;
+      border-radius: 18px;
+      padding: 1.5rem;
+      color: white;
+      box-shadow: 0 0 12px #ff4a4a55;
+      transition: transform 0.3s ease;
+      backdrop-filter: blur(12px);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .live-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 22px #ff4a4acc;
+    }
+
+    .live-card span {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .live-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .live-card p {
+      font-size: 0.95rem;
+      color: #ddd;
     }
 
     .grid {
@@ -173,39 +177,36 @@
 </head>
 <body>
 
-  <!-- Glowing background -->
   <canvas id="bg"></canvas>
 
   <header>
     <h1>📚 Future Toppers</h1>
     <input type="text" id="searchInput" placeholder="Search subject...">
-<section id="noticeSection">
-  <h2>📢 Notice</h2>
-  <ul>
-    <li><strong>Today's Lecture:</strong></li>
-    
 
-    <li>➗ MATHS – 5 PM </li>
-  </ul>
-</section>
-<section id="liveSection">
-  <h2>🔴 Live Classes</h2>
-  <div class="live-grid">
-<a class="live-card" id="sst-live" href="https://live331646.netlify.app/?link=https://d274dp7v20n4nf.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4484954/175275601327827125088/175275601327827125088_7125088.m3u8" target="_blank" style="pointer-events: none; opacity: 0.6;">
-  <span>➗</span>
-  <h3>Maths 5pm</h3>
-  <p id="sst-countdown">⏳ Countdown loading...</p>
-</a>
+    <section id="noticeSection">
+      <h2>📢 Notice</h2>
+      <ul>
+        <li><strong>Today's Lecture:</strong></li>
+        <li>➗ MATHS – 5 PM</li>
+      </ul>
+    </section>
 
-<a class="live-card" id="maths-live" href="#" target="_blank" style="pointer-events: none; opacity: 0.6;">
-  <span></span>
-  <h3>NO CLASS</h3>
-  <p id="maths-countdown">⏳ Countdown loading...</p>
-</a>
-  </div>
-</section>
+    <section id="liveSection">
+      <h2>🔴 Live Classes</h2>
+      <div class="live-grid">
+        <a class="live-card" id="sst-live" href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://dga9kme080o0w.cloudfront.net/out/v1/5c7cfedca3df4fc99ea383b5f2e6a7a8/index.m3u8" target="_blank">
+          <span>➗</span>
+          <h3>Maths 5pm</h3>
+          <p id="Maths-countdown">⏳ Countdown loading...</p>
+        </a>
 
-
+        <a class="live-card" id="maths-live" href="#" target="_blank">
+          <span>❌</span>
+          <h3>No Class</h3>
+          <p id="maths-countdown">⏳ Countdown loading...</p>
+        </a>
+      </div>
+    </section>
   </header>
 
   <div class="grid" id="subjectGrid">
@@ -223,6 +224,7 @@
     Made with 💙 by Future Toppers
   </footer>
 
+  <!-- Search Filter -->
   <script>
     const input = document.getElementById('searchInput');
     const cards = document.querySelectorAll('.card');
@@ -235,7 +237,7 @@
     });
   </script>
 
-  <!-- Particle background animation -->
+  <!-- Particles Background -->
   <script>
     const canvas = document.getElementById("bg");
     const ctx = canvas.getContext("2d");
@@ -269,46 +271,55 @@
     }
 
     animate();
-
     window.addEventListener('resize', () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
   </script>
+
+  <!-- Countdown with Auto-Hide -->
   <script>
-  function startCountdown(hour, minute, countdownId, cardId, joinUrl) {
-    const countdown = document.getElementById(countdownId);
-    const card = document.getElementById(cardId);
+    function startCountdown(hour, minute, countdownId, cardId, joinUrl) {
+      const countdown = document.getElementById(countdownId);
+      const card = document.getElementById(cardId);
 
-    function update() {
-      const now = new Date();
-      let target = new Date();
-      target.setHours(hour, minute, 0, 0);
+      function update() {
+        const now = new Date();
+        let target = new Date();
+        target.setHours(hour, minute, 0, 0);
 
-      // If class time already passed, show "Live Now"
-      if (now >= target) {
-        countdown.textContent = "🔴 Live Now";
-        card.href = joinUrl;
-        card.style.pointerEvents = "auto";
-        card.style.opacity = "1";
-        return;
+        const diff = target - now;
+
+        // Auto-hide card 2 hours after class time
+        if (now - target > 2 * 60 * 60 * 1000) {
+          card.style.display = "none";
+          return;
+        }
+
+        // Class is live
+        if (now >= target) {
+          countdown.textContent = "🔴 Live Now";
+          card.href = joinUrl;
+          card.style.pointerEvents = "auto";
+          card.style.opacity = "1";
+          return;
+        }
+
+        // Countdown
+        const hrs = Math.floor(diff / (1000 * 60 * 60));
+        const mins = Math.floor((diff / (1000 * 60)) % 60);
+        const secs = Math.floor((diff / 1000) % 60);
+        countdown.textContent = `⏳ Starts in: ${hrs}h ${mins}m ${secs}s`;
       }
 
-      const diff = target - now;
-      const hrs = Math.floor(diff / (1000 * 60 * 60));
-      const mins = Math.floor((diff / (1000 * 60)) % 60);
-      const secs = Math.floor((diff / 1000) % 60);
-      countdown.textContent = `⏳ Starts in: ${hrs}h ${mins}m ${secs}s`;
+      update();
+      setInterval(update, 1000);
     }
 
-    update();
-    setInterval(update, 1000);
-  }
+    // Start countdowns
+    startCountdown(17, 0, "Maths-countdown", "sst-live", "https://futuretoppersvideoplayer8939.netlify.app/?link=https://dga9kme080o0w.cloudfront.net/out/v1/5c7cfedca3df4fc99ea383b5f2e6a7a8/index.m3u8");
+    startCountdown(20, 0, "maths-countdown", "maths-live", "#");
+  </script>
 
-  // Start countdowns
-  startCountdown(17, 0, "sst-countdown", "sst-live", <a href="https://futuretoppersvideoplayer8939.netlify.app/?link=https://dga9kme080o0w.cloudfront.net/out/v1/5c7cfedca3df4fc99ea383b5f2e6a7a8/index.m3u8");
-  startCountdown(20, 0, "maths-countdown", "maths-live",<a href= "https://futuretoppersvideoplayer8939.netlify.app/?link=https://dga9kme080o0w.cloudfront.net/out/v1/5c7cfedca3df4fc99ea383b5f2e6a7a8/index.m3u8");
-
-  
 </body>
-</html>
+  </html>
