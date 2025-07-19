@@ -7,6 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    #particles-js {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+    }
     :root {
       --primary: #4361ee;
       --secondary: #3a0ca3;
@@ -452,7 +459,7 @@
 <body>
   <div class="container">
     <header>
-      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712104.png" alt="logo">
+      <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHsoicvJjmBhA/company-logo_200_200/company-logo_200_200/0/1734597691585/next_toppers_logo?e=2147483647&v=beta&t=v8BGc1q8mtS_xcFTpqz4vOWSuqvuczx9cEH7WueZ1Zw" alt="logo">
       <h1>Science Test 1</h1>
     </header>
     
@@ -755,6 +762,19 @@ const questions = [
     // Initialize the quiz
     initQuiz();
   </script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<div id="particles-js"></div> <script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60, density: { enable: true, value_area: 800 } },
+    color: { value: "#38bdf8" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: { enable: true, speed: 1.5 }
+  }
+});
+</script>
 </body>
 </html>
   
