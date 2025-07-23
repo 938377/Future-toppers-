@@ -2,144 +2,278 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Future Toppers - Live Classes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Classes </title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+    .live-classes-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      background: #121212;
+      color: #e0e0e0;
+      text-align: center;
+      font-family: Arial, sans-serif;
     }
 
-    body {
-      background-color: #0d0d0d;
-      color: white;
-      padding: 20px;
+    /* ✅ Heading */
+    .live-classes-container h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 24px;
+      color: #ffffff;
+    }
+
+    .tabs-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .tab-button {
+      background: #1f1f1f;
+      border: 1px solid #333;
+      border-radius: 8px;
+      color: #e0e0e0;
+      padding: 10px 22px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .tab-button:hover {
+      background: #2a2a2a;
+      transform: scale(1.05);
+    }
+
+    .tab-button.active {
+      background: #ffffff;
+      color: #121212;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .card-link {
+      width: 280px;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+
+    .live-card {
+      width: 100%;
+      background: #1f1f1f;
+      border: 1px solid #333;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, background 0.3s ease;
+      text-align: left;
+    }
+
+    .live-card:hover {
+      background: #2a2a2a;
+      transform: translateY(-6px);
+    }
+
+    .card-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      background-color: #000;
+      border-bottom: 1px solid #333;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 6px;
+      text-decoration: none;
+    }
+
+    .card-subject,
+    .card-status,
+    .card-countdown {
+      font-size: 13px;
+      color: #bbbbbb;
+      margin: 4px 0;
+      text-decoration: none;
+    }
+
+    .loading-text {
+      font-size: 16px;
+      color: #cccccc;
+      margin-top: 40px;
       text-align: center;
     }
 
-    h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
+    @media (max-width: 768px) {
+      .card-link,
+      .live-card {
+        width: 95%;
+      }
 
-    .tabs {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-      gap: 10px;
-    }
+      .card-grid {
+        gap: 16px;
+      }
 
-    .tabs button {
-      padding: 10px 20px;
-      border-radius: 10px;
-      border: 2px solid #444;
-      background-color: transparent;
-      color: white;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .tabs button.active {
-      background-color: white;
-      color: black;
-    }
-
-    .cards {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .card {
-      background-color: #1a1a1a;
-      border: 1px solid #333;
-      padding: 15px;
-      border-radius: 15px;
-      text-align: left;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .card a {
-      color: #00ffff;
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #aaa;
+      .card-title {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>🔴 Live Classes</h1>
-  <div class="tabs">
-    <button onclick="switchTab('live')" id="liveTab" class="active">Live</button>
-    <button onclick="switchTab('upcoming')" id="upcomingTab">Upcoming</button>
-    <button onclick="switchTab('completed')" id="completedTab">Completed</button>
+  <div class="live-classes-container">
+    <h2>🔴 Live Classes</h2>
+    <div class="tabs-wrapper">
+      <button class="tab-button active" onclick="switchTab('live')">Live</button>
+      <button class="tab-button" onclick="switchTab('upcoming')">Upcoming</button>
+      <button class="tab-button" onclick="switchTab('completed')">Completed</button>
+    </div>
+
+    <div id="cardGrid" class="card-grid"></div>
+    <p id="loading" class="loading-text">⏳ Loading...</p>
   </div>
-  <div class="cards" id="cardContainer">Loading...</div>
-  <footer>© 2025 Future Toppers. All rights reserved.</footer>
 
   <script>
-    let data = {
-      live: [],
-      upcoming: [],
-      completed: []
+    const tabs = ["live", "upcoming", "completed"];
+    const subjectMap = {
+      "35848": "Maths",
+      "35850": "Science",
+      "35849": "SST"
     };
-    let currentTab = 'live';
+    const GITHUB_API_BASE = "https://automation9th.vercel.app/api/api.php?token=my_secret_key_123&view=";
 
-    async function fetchData() {
-      try {
-        const res = await fetch("https://api.npoint.io/c7e6a3c6dfb5cfad4a12");
-        const json = await res.json();
-        data = json;
-      } catch (err) {
-        document.getElementById("cardContainer").innerHTML = "<p>⚠️ Failed to load classes.</p>";
-        console.error(err);
-      }
+    let data = {};
+    let currentTab = "live";
+
+    function formatTime(unix) {
+      const d = new Date(parseInt(unix) * 1000);
+      return d.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
     }
 
-    function renderCards() {
-      const container = document.getElementById("cardContainer");
-      const list = data[currentTab];
+    function formatDuration(seconds) {
+      const s = parseInt(seconds || "0", 10);
+      if (isNaN(s) || s <= 0) return "—";
+      const mins = Math.floor(s / 60);
+      const hrs = Math.floor(mins / 60);
+      const remMin = mins % 60;
+      return hrs > 0 ? `${hrs}h ${remMin}m` : `${remMin}m`;
+    }
 
-      if (!list || list.length === 0) {
-        container.innerHTML = "<p>No classes found.</p>";
-        return;
+    function countdownTo(unix) {
+      const ms = parseInt(unix) * 1000 - Date.now();
+      if (ms < 0) return "🔴 Starting soon";
+      const mins = Math.floor(ms / 60000);
+      const hrs = Math.floor(mins / 60);
+      const remMin = mins % 60;
+      return `🕒 ${hrs}h ${remMin}m left`;
+    }
+
+    function renderCard(item, tab) {
+      const subject = subjectMap[item.payload.topic_id] || "Unknown";
+      const fileUrl = item.file_url;
+      const title = item.title || "Untitled";
+      const thumb = item.thumbnail_url || "https://decicqog4ulhy.cloudfront.net/0/admin_v1/application_management/clientlogo/4370222540_7521371540_next_topper_logo%20%281%29.png";
+      const startAt = formatTime(item.start_date);
+      const endAt = formatTime(item.end_date);
+      const duration = formatDuration(item.video_length || item.playtime || 0);
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "card-link";
+
+      const card = document.createElement("div");
+      card.className = `live-card ${tab}`;
+      card.innerHTML = `
+        <img src="${thumb}" alt="${title}" class="card-image" />
+        <div class="card-content">
+          <h3 class="card-title">${title}</h3>
+          <p class="card-subject">📘 ${subject}</p>
+          ${
+            tab === "live"
+              ? `<p class="card-status">🔴 Live Now</p>
+                 <p class="card-countdown">🗓️ Start: ${startAt}</p>
+                 <p class="card-countdown">🕓 End: ${endAt}</p>
+                 <p class="card-countdown">⏱️ Duration: ${duration}</p>`
+              : tab === "upcoming"
+              ? `<p class="card-countdown">${countdownTo(item.start_date)}</p>
+                 <p class="card-countdown">🗓️ Start: ${startAt}</p>
+                 <p class="card-countdown">🕓 End: ${endAt}</p>
+                 <p class="card-status">🟡 Scheduled</p>`
+              : `<p class="card-status">✅ Completed</p>
+                 <p class="card-countdown">🗓️ Start: ${startAt}</p>
+                 <p class="card-countdown">🕓 End: ${endAt}</p>
+                 <p class="card-countdown">⏱️ Duration: ${duration}</p>`
+          }
+        </div>`;
+
+      // Click to redirect (live + completed)
+      if (tab === "live" || tab === "completed") {
+        card.addEventListener("click", () => {
+          window.location.href = `https://futuretoppersvideoplayer8939.netlify.app/?link=${encodeURIComponent(fileUrl)}`;
+        });
       }
 
-      container.innerHTML = "";
-      list.forEach(item => {
-        const div = document.createElement("div");
-        div.className = "card";
-        div.innerHTML = `
-          <h3>${item.title}</h3>
-          <p>Subject: ${item.subject}</p>
-          <p>Time: ${item.time}</p>
-          <a href="${item.link}" target="_blank">Join Class</a>
-        `;
-        container.appendChild(div);
-      });
+      wrapper.appendChild(card);
+      return wrapper;
     }
 
     function switchTab(tab) {
       currentTab = tab;
-      document.querySelectorAll(".tabs button").forEach(btn => btn.classList.remove("active"));
-      document.getElementById(tab + "Tab").classList.add("active");
+      document.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
+      document.querySelector(`.tab-button:nth-child(${tabs.indexOf(tab) + 1})`).classList.add("active");
       renderCards();
     }
 
-    async function init() {
-      await fetchData();
+    function renderCards() {
+      const grid = document.getElementById("cardGrid");
+      const loading = document.getElementById("loading");
+      grid.innerHTML = "";
+      loading.style.display = "none";
+
+      if (!data[currentTab] || data[currentTab].length === 0) {
+        grid.innerHTML = "<p>No classes found.</p>";
+        return;
+      }
+
+      data[currentTab].forEach(item => {
+        grid.appendChild(renderCard(item, currentTab));
+      });
+    }
+
+    async function fetchData() {
+      const loading = document.getElementById("loading");
+      loading.style.display = "block";
+      for (const tab of tabs) {
+        try {
+          const res = await fetch(`${GITHUB_API_BASE}${tab}`);
+          const json = await res.json();
+          data[tab] = json.data || [];
+        } catch (e) {
+          data[tab] = [];
+        }
+      }
       renderCards();
     }
 
-    init();
+    fetchData();
   </script>
 </body>
 </html>
+
