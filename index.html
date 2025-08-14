@@ -1,145 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Future Toppers - Live Classes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-color: #0d0d0d;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-
-    .tabs {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-      gap: 10px;
-    }
-
-    .tabs button {
-      padding: 10px 20px;
-      border-radius: 10px;
-      border: 2px solid #444;
-      background-color: transparent;
-      color: white;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .tabs button.active {
-      background-color: white;
-      color: black;
-    }
-
-    .cards {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .card {
-      background-color: #1a1a1a;
-      border: 1px solid #333;
-      padding: 15px;
-      border-radius: 15px;
-      text-align: left;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .card a {
-      color: #00ffff;
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #aaa;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Periodic Table</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  margin: 0;
+}
+header {
+  text-align: center;
+  padding: 20px;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+@keyframes shine {
+  0% {filter: brightness(1);}
+  50% {filter: brightness(1.4);}
+  100% {filter: brightness(1);}
+}
+.searchBar {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+.periodicTable {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 8px;
+  padding: 20px;
+}
+.elementTile {
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.elementTile:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--glow-color, white);
+}
+.elementNumber {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+.elementSymbol {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.elementName {
+  font-size: 0.9rem;
+}
+.alkaliMetal {--glow-color: #ff4b5c;}
+.alkalineEarthMetal {--glow-color: #ffcd3c;}
+.transitionMetal {--glow-color: #00bcd4;}
+.postTransitionMetal {--glow-color: #4caf50;}
+.metalloid {--glow-color: #ff9800;}
+.nonMetal {--glow-color: #8bc34a;}
+.halogen {--glow-color: #e91e63;}
+.nobleGas {--glow-color: #9c27b0;}
+.lanthanide {--glow-color: #ff6f61;}
+.actinide {--glow-color: #f06292;}
+.modalContainer {
+  display: none;
+  position: fixed;
+  top: 0;left: 0;width: 100%;height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+}
+.modalHeadingContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.modalElementSymbol {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.modalHeading {
+  font-size: 1.5rem;
+}
+.modalLabel {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+}
+</style>
 </head>
 <body>
-  <h1>🔴 Live Classes</h1>
-  <div class="tabs">
-    <button onclick="switchTab('live')" id="liveTab" class="active">Live</button>
-    <button onclick="switchTab('upcoming')" id="upcomingTab">Upcoming</button>
-    <button onclick="switchTab('completed')" id="completedTab">Completed</button>
+<header>PERIODIC TABLE OF ELEMENTS</header>
+<input type="text" class="searchBar" placeholder="Search element...">
+<div class="periodicTable" id="displayTable"></div>
+
+<div class="modalContainer">
+  <div class="modal">
+    <button class="closeButton">&#x2715;</button>
+    <div class="modalHeadingContainer">
+      <div class="modalElementSymbol"></div>
+      <div class="modalHeading"></div>
+    </div>
+    <div class="modalLabel">Atomic number: <span class="atomicNumber"></span></div>
+    <div class="modalLabel">Category: <span class="elementCategory"></span></div>
   </div>
-  <div class="cards" id="cardContainer">Loading...</div>
-  <footer>© 2025 Future Toppers. All rights reserved.</footer>
+</div>
 
-  <script>
-    let data = {
-      live: [],
-      upcoming: [],
-      completed: []
-    };
-    let currentTab = 'live';
-
-    async function fetchData() {
-      try {
-        const res = await fetch("https://api.npoint.io/c7e6a3c6dfb5cfad4a12");
-        const json = await res.json();
-        data = json;
-      } catch (err) {
-        document.getElementById("cardContainer").innerHTML = "<p>⚠️ Failed to load classes.</p>";
-        console.error(err);
-      }
-    }
-
-    function renderCards() {
-      const container = document.getElementById("cardContainer");
-      const list = data[currentTab];
-
-      if (!list || list.length === 0) {
-        container.innerHTML = "<p>No classes found.</p>";
-        return;
-      }
-
-      container.innerHTML = "";
-      list.forEach(item => {
-        const div = document.createElement("div");
-        div.className = "card";
-        div.innerHTML = `
-          <h3>${item.title}</h3>
-          <p>Subject: ${item.subject}</p>
-          <p>Time: ${item.time}</p>
-          <a href="${item.link}" target="_blank">Join Class</a>
-        `;
-        container.appendChild(div);
-      });
-    }
-
-    function switchTab(tab) {
-      currentTab = tab;
-      document.querySelectorAll(".tabs button").forEach(btn => btn.classList.remove("active"));
-      document.getElementById(tab + "Tab").classList.add("active");
-      renderCards();
-    }
-
-    async function init() {
-      await fetchData();
-      renderCards();
-    }
-
-    init();
-  </script>
+<script>
+const elementsData = [
+  {num:1,sym:"H",name:"Hydrogen",cat:"nonMetal"},
+  {num:2,sym:"He",name:"Helium",cat:"nobleGas"},
+  {num:3,sym:"Li",name:"Lithium",cat:"alkaliMetal"},
+  {num:4,sym:"Be",name:"Beryllium",cat:"alkalineEarthMetal"},
+  {num:5,sym:"B",name:"Boron",cat:"metalloid"},
+  {num:6,sym:"C",name:"Carbon",cat:"nonMetal"},
+  {num:7,sym:"N",name:"Nitrogen",cat:"nonMetal"},
+  {num:8,sym:"O",name:"Oxygen",cat:"nonMetal"},
+  {num:9,sym:"F",name:"Fluorine",cat:"halogen"},
+  {num:10,sym:"Ne",name:"Neon",cat:"nobleGas"},
+  {num:11,sym:"Na",name:"Sodium",cat:"alkaliMetal"},
+  {num:12,sym:"Mg",name:"Magnesium",cat:"alkalineEarthMetal"},
+  {num:13,sym:"Al",name:"Aluminium",cat:"postTransitionMetal"},
+  {num:14,sym:"Si",name:"Silicon",cat:"metalloid"},
+  {num:15,sym:"P",name:"Phosphorus",cat:"nonMetal"},
+  {num:16,sym:"S",name:"Sulfur",cat:"nonMetal"},
+  {num:17,sym:"Cl",name:"Chlorine",cat:"halogen"},
+  {num:18,sym:"Ar",name:"Argon",cat:"nobleGas"},
+  {num:19,sym:"K",name:"Potassium",cat:"alkaliMetal"},
+  {num:20,sym:"Ca",name:"Calcium",cat:"alkalineEarthMetal"},
+  // ... fill up to 118 with appropriate categories ...
+  {num:118,sym:"Og",name:"Oganesson",cat:"nobleGas"}
+];
+const table = document.getElementById("displayTable");
+function renderElements(list){
+  table.innerHTML = "";
+  list.forEach(e=>{
+    const div = document.createElement("div");
+    div.className = `${e.cat} elementTile`;
+    div.innerHTML = `<div class="elementNumber">${e.num}</div>
+                     <div class="elementSymbol">${e.sym}</div>
+                     <div class="elementName">${e.name}</div>`;
+    div.addEventListener("click",()=>{
+      document.querySelector(".modalElementSymbol").textContent = e.sym;
+      document.querySelector(".modalHeading").textContent = e.name;
+      document.querySelector(".atomicNumber").textContent = e.num;
+      document.querySelector(".elementCategory").textContent = e.cat;
+      document.querySelector(".modalContainer").style.display = "flex";
+    });
+    table.appendChild(div);
+  });
+}
+renderElements(elementsData);
+document.querySelector(".searchBar").addEventListener("input",e=>{
+  const val = e.target.value.toLowerCase();
+  renderElements(elementsData.filter(el=>el.name.toLowerCase().includes(val)||el.sym.toLowerCase().includes(val)));
+});
+document.querySelector(".closeButton").addEventListener("click",()=>{
+  document.querySelector(".modalContainer").style.display = "none";
+});
+</script>
 </body>
-</html>
+  </html>
